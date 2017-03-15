@@ -1,0 +1,129 @@
+SFG 01/05 OPM/OPP Cartridge Partslist
+Copyright (C) 2017 RBSC
+Original SFG design by Yamaha Corp.
+-------------------------------------
+
+Count  ComponentName   RefDes          PatternName     Value          
+------ --------------- --------------- --------------- ---------------
+
+     3 1N4148S         D1              SOD80PD                        
+                       D2                                                                             
+                       D3                                                                             
+     3 4558D           AU1             SOP8                           
+                       AU2                                                                            
+                       AU3                                                                            
+     1 C_0603          C20             C0603_132A      0.027          
+    11 C_0603          C1              C0603_132A      0.1            
+                       C2                                                                             
+                       C4                                                                             
+                       C5                                                                             
+                       C6                                                                             
+                       C7                                                                             
+                       C9                                                                             
+                       C29                                                                            
+                       C30                                                                            
+                       C32                                                                            
+                       C33                                                                            
+     2 C_0603          C25             C0603_132A      1n             
+                       C27                                                                            
+     2 C_0603          C21             C0603_132A      1n8            
+                       C23                                                                            
+    17 C_0603          C31             C0603_132A      100p           
+                       C34                                                                            
+                       C35                                                                            
+                       C36                                                                            
+                       C37                                                                            
+                       C38                                                                            
+                       C39                                                                            
+                       C40                                                                            
+                       C41                                                                            
+                       C42                                                                            
+                       C43                                                                            
+                       C44                                                                            
+                       C45                                                                            
+                       C46                                                                            
+                       C47                                                                            
+                       C48                                                                            
+                       C49                                                                            
+     2 C_0603          C14             C0603_132A      390p           
+                       C15                                                                            
+     6 C_1206          C16             C1206_134A      4.7mk 25v      
+                       C17                                                                            
+                       C18                                                                            
+                       C19                                                                            
+                       C22                                                                            
+                       C24                                                                            
+     1 C_1812          C12             C1812_136A      10mk 6.3v      
+     1 C_1812          C26             C1812_136A      10mk 16v       
+     2 C_1812          C3              C1812_136A      47mk 16v       
+                       C28                                                                            
+     1 C_1812          C13             C1812_136A      47mk  6.3v     
+     3 C_1812          C10             C1812_136A      100mk 16v      
+                       C11                                                                            
+                       L3                                                                             
+     1 C_1812          L1              C1812_136A      820 uH         
+     2 C_1812          L2              C1812_136A                     
+                       L6                                                                             
+     1 EDGE50/MSX      X1              EDGE50/100_350                 
+     1 EPM7160STC100-1 IC103           TQFP100                        
+       0                                                                                              
+     1 IDC2X20M        CN4             IDC40M                         
+     1 IDC10M          CN3             IDC10M                         
+     1 M27C256B-10C1   IC104           PLCC32                         
+     6 R_0603          R26             R0603_101A      1k             
+                       R27                                                                            
+                       R49                                                                            
+                       R50                                                                            
+                       R51                                                                            
+                       R52                                                                            
+     1 R_0603          R18             R0603_101A      1k8            
+     1 R_0603          R8              R0603_101A      1M             
+     2 R_0603          R22             R0603_101A      1.8k           
+                       R24                                                                            
+     1 R_0603          R23             R0603_101A      2k2            
+     2 R_0603          R21             R0603_101A      2.2k           
+                       R25                                                                            
+     4 R_0603          R9              R0603_101A      4k7            
+                       R12                                                                            
+                       R14                                                                            
+                       R34                                                                            
+     2 R_0603          R10             R0603_101A      4.7k           
+                       R11                                                                            
+    14 R_0603          R6              R0603_101A      10k            
+                       R7                                                                             
+                       R13                                                                            
+                       R15                                                                            
+                       R38                                                                            
+                       R40                                                                            
+                       R41                                                                            
+                       R42                                                                            
+                       R43                                                                            
+                       R44                                                                            
+                       R45                                                                            
+                       R46                                                                            
+                       R47                                                                            
+                       R48                                                                            
+     2 R_0603          R35             R0603_101A      22k            
+                       R36                                                                            
+     7 R_0603          R4              R0603_101A      220            
+                       R5                                                                             
+                       R17                                                                            
+                       R19                                                                            
+                       R30                                                                            
+                       R32                                                                            
+                       R33                                                                            
+     1 R_0603          R31             R0603_101A      330            
+     1 R_0603          R37             R0603_101A      390            
+     2 R_0603          R16             R0603_101A      560            
+                       R20                                                                            
+     1 SN74ALS04BD     IC108           D014                           
+     1 SOT-23(A1A2K)   TR103           SOT-23(A1A2K)   2SA733         
+     5 SOT-23(A1A2K)   TR101           SOT-23(A1A2K)   2SC945         
+                       TR102                                                                          
+                       TR104                                                                          
+                       TR105                                                                          
+                       TR106                                                                          
+     1 ST-222          AX1             ST-222          {Value}        
+     1 TLP552          IC109           TLP552                         
+     1 YM2151          IC101           YM2151                         
+     1 YM3012          IC102           YM3012                         
