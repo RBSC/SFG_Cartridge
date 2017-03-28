@@ -1,4 +1,4 @@
-SFG 01/05 OPM/OPP Cartridge Partslist
+SFG 05/01-S OPM Cartridge Partslist
 Copyright (C) 2017 RBSC
 Original SFG design by Yamaha Corp.
 -------------------------------------
