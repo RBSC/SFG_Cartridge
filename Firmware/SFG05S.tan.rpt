@@ -1,0 +1,1206 @@
+Classic Timing Analyzer report for SFG05S
+Sun Mar 12 20:17:13 2017
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'pCrtClc'
+  7. Clock Hold: 'pCrtClc'
+  8. tsu
+  9. tco
+ 10. tpd
+ 11. th
+ 12. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                                                                                      ;
++------------------------------+------------------------------------------+---------------+----------------------------------+--------------------------------------------------------------------+-------------------------------------------------------------------+------------+------------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                                                               ; To                                                                ; From Clock ; To Clock   ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+--------------------------------------------------------------------+-------------------------------------------------------------------+------------+------------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 7.000 ns                         ; pSltDat[0]                                                         ; YM2148:C_2148|KeybST[0]                                           ; --         ; pSltClc    ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 42.000 ns                        ; YM2148:C_2148|rcvr:UART_RX|dr                                      ; pSltDat[7]                                                        ; pCrtClc    ; --         ; 0            ;
+; Worst-case tpd               ; N/A                                      ; None          ; 26.000 ns                        ; pSltAdr[0]                                                         ; pSltDat[7]                                                        ; --         ; --         ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 8.000 ns                         ; pSltDat[0]                                                         ; YM2148:C_2148|txmit:UART_TX|tbr[7]                                ; --         ; pSltAdr[0] ; 0            ;
+; Clock Setup: 'pCrtClc'       ; N/A                                      ; None          ; 27.78 MHz ( period = 36.000 ns ) ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                          ; pCrtClc    ; pCrtClc    ; 0            ;
+; Clock Hold: 'pCrtClc'        ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable                            ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3] ; pCrtClc    ; pCrtClc    ; 10           ;
+; Total number of failed paths ;                                          ;               ;                                  ;                                                                    ;                                                                   ;            ;            ; 10           ;
++------------------------------+------------------------------------------+---------------+----------------------------------+--------------------------------------------------------------------+-------------------------------------------------------------------+------------+------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPM7160STC100-10   ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; pSltClc         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pCrtClc         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[13]     ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[12]     ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[11]     ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[10]     ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[9]      ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[8]      ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[7]      ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[6]      ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[5]      ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[4]      ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[3]      ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltSel_n       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltWr_n        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[2]      ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[1]      ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; pSltAdr[0]      ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'pCrtClc'                                                                                                                                                                                                                                                                                                                        ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                                               ; To                                                           ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 27.78 MHz ( period = 36.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                     ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 27.78 MHz ( period = 36.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                     ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 27.78 MHz ( period = 36.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                     ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 27.78 MHz ( period = 36.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                     ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rsr[7]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rsr[7]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rsr[7]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rsr[7]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rsr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rsr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rsr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rsr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rsr[0]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rsr[0]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rsr[0]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rsr[0]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rsr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rsr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rsr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rsr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rsr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rsr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rsr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rsr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rsr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rsr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rsr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rsr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rsr[2]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rsr[2]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rsr[2]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rsr[2]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rsr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rsr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rsr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rsr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; YM2148:C_2148|txmit:UART_TX|tsr[0]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; YM2148:C_2148|txmit:UART_TX|tsr[0]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; YM2148:C_2148|txmit:UART_TX|tsr[0]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; YM2148:C_2148|txmit:UART_TX|tsr[0]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; YM2148:C_2148|txmit:UART_TX|tsr[1]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; YM2148:C_2148|txmit:UART_TX|tsr[1]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; YM2148:C_2148|txmit:UART_TX|tsr[1]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; YM2148:C_2148|txmit:UART_TX|tsr[1]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; YM2148:C_2148|txmit:UART_TX|tsr[2]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; YM2148:C_2148|txmit:UART_TX|tsr[2]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; YM2148:C_2148|txmit:UART_TX|tsr[2]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; YM2148:C_2148|txmit:UART_TX|tsr[2]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; YM2148:C_2148|txmit:UART_TX|tsr[3]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; YM2148:C_2148|txmit:UART_TX|tsr[3]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; YM2148:C_2148|txmit:UART_TX|tsr[3]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; YM2148:C_2148|txmit:UART_TX|tsr[3]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; YM2148:C_2148|txmit:UART_TX|tsr[4]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; YM2148:C_2148|txmit:UART_TX|tsr[4]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; YM2148:C_2148|txmit:UART_TX|tsr[4]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; YM2148:C_2148|txmit:UART_TX|tsr[4]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; YM2148:C_2148|txmit:UART_TX|tsr[5]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; YM2148:C_2148|txmit:UART_TX|tsr[5]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; YM2148:C_2148|txmit:UART_TX|tsr[5]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; YM2148:C_2148|txmit:UART_TX|tsr[5]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; YM2148:C_2148|txmit:UART_TX|tsr[6]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; YM2148:C_2148|txmit:UART_TX|tsr[6]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; YM2148:C_2148|txmit:UART_TX|tsr[6]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; YM2148:C_2148|txmit:UART_TX|tsr[6]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; YM2148:C_2148|txmit:UART_TX|tsr[7]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; YM2148:C_2148|txmit:UART_TX|tsr[7]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; YM2148:C_2148|txmit:UART_TX|tsr[7]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; YM2148:C_2148|txmit:UART_TX|tsr[7]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; YM2148:C_2148|txmit:UART_TX|txd                              ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; YM2148:C_2148|txmit:UART_TX|txd                              ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; YM2148:C_2148|txmit:UART_TX|txd                              ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 46.30 MHz ( period = 21.600 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; YM2148:C_2148|txmit:UART_TX|txd                              ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rbr[0]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rbr[0]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rbr[0]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rbr[0]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rbr[2]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rbr[2]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rbr[2]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rbr[2]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rbr[7]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rbr[7]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rbr[7]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rbr[7]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable                            ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[6]  ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable                            ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[5]  ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable                            ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[4]  ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable                            ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[3]  ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable                            ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[2]  ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable                            ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[1]  ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable                            ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[0]  ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|wrn2                                   ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                     ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|wrn1                                   ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                     ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6]       ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                     ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                           ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                           ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[5] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                           ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[4] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                           ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[3] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                           ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[2] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                           ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[1] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                           ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[0] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rbr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rbr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rbr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rbr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rbr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rbr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rbr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rbr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|e_overrun                         ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|e_overrun                         ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|e_overrun                         ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|e_overrun                         ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|dr                                      ; YM2148:C_2148|rcvr:UART_RX|e_overrun                         ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rbr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rbr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rbr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rbr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rbr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rbr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rbr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rbr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|e_framing                         ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|e_framing                         ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|e_framing                         ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|e_framing                         ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; YM2148:C_2148|rcvr:UART_RX|rbr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; YM2148:C_2148|rcvr:UART_RX|rbr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; YM2148:C_2148|rcvr:UART_RX|rbr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 50.00 MHz ( period = 20.000 ns )                    ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; YM2148:C_2148|rcvr:UART_RX|rbr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[7]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[7]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[6]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[7]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[5]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[4]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[0]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[0]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[5]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[6]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[4]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[3]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[3]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[2]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[2]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[2]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[1]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[2]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[0]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|rcvr:UART_RX|rsr[1]                                  ; YM2148:C_2148|rcvr:UART_RX|rsr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|txmit:UART_TX|tsr[0]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[1]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|txmit:UART_TX|tsr[1]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[2]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|txmit:UART_TX|tsr[2]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[3]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|txmit:UART_TX|tsr[3]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[4]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|txmit:UART_TX|tsr[4]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[5]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|txmit:UART_TX|tsr[5]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[6]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|txmit:UART_TX|tsr[6]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[7]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 92.59 MHz ( period = 10.800 ns )                    ; YM2148:C_2148|txmit:UART_TX|tsr[7]                                 ; YM2148:C_2148|txmit:UART_TX|txd                              ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.800 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[5]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[4]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[3]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[2]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[1]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[0]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[5]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[5] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[4]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[5] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[3]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[5] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[2]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[5] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[1]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[5] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[0]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[5] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[4]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[4] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[3]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[4] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[2]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[4] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[1]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[4] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[0]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[4] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[3]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[3] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[2]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[3] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[1]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[3] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[0]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[3] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[2]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[2] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[1]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[2] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[0]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[2] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[1]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[1] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[0]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[1] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[0]       ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[0] ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|rbr[1]                                  ; YM2148:C_2148|rcvr:UART_RX|rbr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|rsr[6]                                  ; YM2148:C_2148|rcvr:UART_RX|rbr[1]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|rbr[3]                                  ; YM2148:C_2148|rcvr:UART_RX|rbr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|rsr[4]                                  ; YM2148:C_2148|rcvr:UART_RX|rbr[3]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|e_overrun                               ; YM2148:C_2148|rcvr:UART_RX|e_overrun                         ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|rsr[3]                                  ; YM2148:C_2148|rcvr:UART_RX|rbr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|rbr[4]                                  ; YM2148:C_2148|rcvr:UART_RX|rbr[4]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|rsr[2]                                  ; YM2148:C_2148|rcvr:UART_RX|rbr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|rbr[5]                                  ; YM2148:C_2148|rcvr:UART_RX|rbr[5]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|e_framing                               ; YM2148:C_2148|rcvr:UART_RX|e_framing                         ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|rsr[1]                                  ; YM2148:C_2148|rcvr:UART_RX|rbr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|rcvr:UART_RX|rbr[6]                                  ; YM2148:C_2148|rcvr:UART_RX|rbr[6]                            ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|tsr[0]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[0]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|tsr[1]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[1]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|tsr[2]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[2]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|tsr[3]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[3]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|tsr[4]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[4]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|tsr[5]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[5]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|tsr[6]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[6]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; N/A                                     ; 100.00 MHz ( period = 10.000 ns )                   ; YM2148:C_2148|txmit:UART_TX|tsr[7]                                 ; YM2148:C_2148|txmit:UART_TX|tsr[7]                           ; pCrtClc    ; pCrtClc  ; None                        ; None                      ; 6.000 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                                    ;                                                              ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'pCrtClc'                                                                                                                                                                                                                                                 ;
++------------------------------------------+------------------------------------------+--------------------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                                     ; To                                                                 ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+------------------------------------------+--------------------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable  ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; pCrtClc    ; pCrtClc  ; None                       ; None                       ; 6.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable  ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; pCrtClc    ; pCrtClc  ; None                       ; None                       ; 6.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable  ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; pCrtClc    ; pCrtClc  ; None                       ; None                       ; 6.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable  ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; pCrtClc    ; pCrtClc  ; None                       ; None                       ; 6.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; pCrtClc    ; pCrtClc  ; None                       ; None                       ; 6.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; pCrtClc    ; pCrtClc  ; None                       ; None                       ; 6.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; pCrtClc    ; pCrtClc  ; None                       ; None                       ; 6.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; pCrtClc    ; pCrtClc  ; None                       ; None                       ; 6.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; YM2148:C_2148|rcvr:UART_RX|rxd2          ; YM2148:C_2148|rcvr:UART_RX|e_framing                               ; pCrtClc    ; pCrtClc  ; None                       ; None                       ; 6.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; YM2148:C_2148|rcvr:UART_RX|rxd2          ; YM2148:C_2148|rcvr:UART_RX|rsr[0]                                  ; pCrtClc    ; pCrtClc  ; None                       ; None                       ; 6.800 ns                 ;
++------------------------------------------+------------------------------------------+--------------------------------------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                            ;
++-----------------------------------------+-----------------------------------------------------+------------+------------+---------------------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From       ; To                        ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+------------+---------------------------+----------+
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVMidi[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|RxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVMidi[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVExtr[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|TxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|TxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVMidi[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVExtr[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|RxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVMidi[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVExtr[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVExtr[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVMidi[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVExtr[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVExtr[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVMidi[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVMidi[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVExtr[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVMidi[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|IntVExtr[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|KeybST[1]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|KeybST[0]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|KeybST[2]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|KeybST[7]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|KeybST[6]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|KeybST[3]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|KeybST[5]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[0] ; YM2148:C_2148|KeybST[4]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVMidi[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|RxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVMidi[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVExtr[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|TxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|TxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVMidi[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVExtr[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|RxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVMidi[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVExtr[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVExtr[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVMidi[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVExtr[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVExtr[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVMidi[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVMidi[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVExtr[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVMidi[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|IntVExtr[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|KeybST[1]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|KeybST[0]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|KeybST[2]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|KeybST[7]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|KeybST[6]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|KeybST[3]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|KeybST[5]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[1] ; YM2148:C_2148|KeybST[4]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVMidi[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|RxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVMidi[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVExtr[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|TxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|TxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVMidi[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVExtr[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|RxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVMidi[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVExtr[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVExtr[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVMidi[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVExtr[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVExtr[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVMidi[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVMidi[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVExtr[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVMidi[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|IntVExtr[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|KeybST[1]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|KeybST[0]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|KeybST[2]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|KeybST[7]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|KeybST[6]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|KeybST[3]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|KeybST[5]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[2] ; YM2148:C_2148|KeybST[4]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVMidi[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|RxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVMidi[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVExtr[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|TxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|TxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVMidi[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVExtr[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|RxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVMidi[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVExtr[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVExtr[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVMidi[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVExtr[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVExtr[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVMidi[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVMidi[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVExtr[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVMidi[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|IntVExtr[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|KeybST[1]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|KeybST[0]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|KeybST[2]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|KeybST[7]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|KeybST[6]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|KeybST[3]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|KeybST[5]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltWr_n   ; YM2148:C_2148|KeybST[4]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVMidi[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|RxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVMidi[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVExtr[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|TxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|TxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVMidi[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVExtr[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|RxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVMidi[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVExtr[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVExtr[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVMidi[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVExtr[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVExtr[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVMidi[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVMidi[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVExtr[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVMidi[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|IntVExtr[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|KeybST[1]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|KeybST[0]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|KeybST[2]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|KeybST[7]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|KeybST[6]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|KeybST[3]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|KeybST[5]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltSel_n  ; YM2148:C_2148|KeybST[4]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVMidi[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|RxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVMidi[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVExtr[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|TxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|TxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVMidi[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVExtr[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|RxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVMidi[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVExtr[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVExtr[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVMidi[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVExtr[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVExtr[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVMidi[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVMidi[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVExtr[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVMidi[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|IntVExtr[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|KeybST[1]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|KeybST[0]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|KeybST[2]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|KeybST[7]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|KeybST[6]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|KeybST[3]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|KeybST[5]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[3] ; YM2148:C_2148|KeybST[4]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVMidi[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|RxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVMidi[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVExtr[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|TxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|TxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVMidi[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVExtr[1] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|RxIE        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVMidi[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVExtr[3] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVExtr[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVMidi[2] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVExtr[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVExtr[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVMidi[4] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVMidi[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVExtr[5] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVMidi[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|IntVExtr[6] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|KeybST[1]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|KeybST[0]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|KeybST[2]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|KeybST[7]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|KeybST[6]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|KeybST[3]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|KeybST[5]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[4] ; YM2148:C_2148|KeybST[4]   ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[5] ; YM2148:C_2148|IntVMidi[0] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[5] ; YM2148:C_2148|RxEN        ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[5] ; YM2148:C_2148|IntVMidi[7] ; pSltClc  ;
+; N/A                                     ; None                                                ; 7.000 ns   ; pSltAdr[5] ; YM2148:C_2148|IntVExtr[7] ; pSltClc  ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;            ;                           ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+------------+---------------------------+----------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; tco                                                                                                     ;
++-------+--------------+------------+------------------------------------------+------------+-------------+
+; Slack ; Required tco ; Actual tco ; From                                     ; To         ; From Clock  ;
++-------+--------------+------------+------------------------------------------+------------+-------------+
+; N/A   ; None         ; 42.000 ns  ; YM2148:C_2148|rcvr:UART_RX|dr            ; pSltDat[7] ; pCrtClc     ;
+; N/A   ; None         ; 39.000 ns  ; YM2148:C_2148|rcvr:UART_RX|dr            ; pSltDat[4] ; pCrtClc     ;
+; N/A   ; None         ; 34.800 ns  ; YM2148:C_2148|rcvr:UART_RX|rbr[4]        ; pSltDat[4] ; pCrtClc     ;
+; N/A   ; None         ; 34.800 ns  ; YM2148:C_2148|rcvr:UART_RX|dr            ; pSltDat[2] ; pCrtClc     ;
+; N/A   ; None         ; 34.000 ns  ; YM2148:C_2148|rcvr:UART_RX|dr            ; pSltDat[6] ; pCrtClc     ;
+; N/A   ; None         ; 34.000 ns  ; YM2148:C_2148|rcvr:UART_RX|dr            ; pSltDat[5] ; pCrtClc     ;
+; N/A   ; None         ; 34.000 ns  ; YM2148:C_2148|rcvr:UART_RX|e_overrun     ; pSltDat[4] ; pCrtClc     ;
+; N/A   ; None         ; 34.000 ns  ; YM2148:C_2148|rcvr:UART_RX|dr            ; pSltDat[3] ; pCrtClc     ;
+; N/A   ; None         ; 34.000 ns  ; YM2148:C_2148|rcvr:UART_RX|dr            ; pSltDat[1] ; pCrtClc     ;
+; N/A   ; None         ; 34.000 ns  ; YM2148:C_2148|rcvr:UART_RX|rbr[7]        ; pSltDat[7] ; pCrtClc     ;
+; N/A   ; None         ; 34.000 ns  ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; pSltDat[7] ; pCrtClc     ;
+; N/A   ; None         ; 34.000 ns  ; YM2148:C_2148|rcvr:UART_RX|dr            ; pSltDat[0] ; pCrtClc     ;
+; N/A   ; None         ; 31.000 ns  ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; pSltDat[4] ; pCrtClc     ;
+; N/A   ; None         ; 29.000 ns  ; YM2148:C_2148|IntVMidi[7]                ; pSltDat[7] ; pSltClc     ;
+; N/A   ; None         ; 29.000 ns  ; YM2148:C_2148|IntVExtr[7]                ; pSltDat[7] ; pSltClc     ;
+; N/A   ; None         ; 29.000 ns  ; YM2148:C_2148|TxIE                       ; pSltDat[7] ; pSltClc     ;
+; N/A   ; None         ; 29.000 ns  ; YM2148:C_2148|RxIE                       ; pSltDat[7] ; pSltClc     ;
+; N/A   ; None         ; 26.800 ns  ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; pSltDat[2] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; pSltDat[6] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|rcvr:UART_RX|rbr[6]        ; pSltDat[6] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; pSltDat[5] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|rcvr:UART_RX|rbr[5]        ; pSltDat[5] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|rcvr:UART_RX|e_framing     ; pSltDat[5] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|TxIE                       ; pSltDat[4] ; pSltClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|RxIE                       ; pSltDat[4] ; pSltClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; pSltDat[3] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|rcvr:UART_RX|rbr[3]        ; pSltDat[3] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; pSltDat[1] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|rcvr:UART_RX|rbr[1]        ; pSltDat[1] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|rcvr:UART_RX|rbr[2]        ; pSltDat[2] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|rcvr:UART_RX|rbr[0]        ; pSltDat[0] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; pSltDat[0] ; pCrtClc     ;
+; N/A   ; None         ; 26.000 ns  ; YM2148:C_2148|rcvr:UART_RX|dr            ; pSltInt_n  ; pCrtClc     ;
+; N/A   ; None         ; 21.800 ns  ; YM2148:C_2148|TxIE                       ; pSltDat[2] ; pSltClc     ;
+; N/A   ; None         ; 21.800 ns  ; YM2148:C_2148|RxIE                       ; pSltDat[2] ; pSltClc     ;
+; N/A   ; None         ; 21.800 ns  ; YM2148:C_2148|IntVExtr[2]                ; pSltDat[2] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|TxIE                       ; pSltDat[6] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|RxIE                       ; pSltDat[6] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVMidi[6]                ; pSltDat[6] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVExtr[6]                ; pSltDat[6] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|TxIE                       ; pSltDat[5] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|RxIE                       ; pSltDat[5] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVMidi[5]                ; pSltDat[5] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVExtr[5]                ; pSltDat[5] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVExtr[4]                ; pSltDat[4] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVMidi[4]                ; pSltDat[4] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|TxIE                       ; pSltDat[3] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|RxIE                       ; pSltDat[3] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVMidi[3]                ; pSltDat[3] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVExtr[3]                ; pSltDat[3] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|TxIE                       ; pSltDat[1] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVMidi[1]                ; pSltDat[1] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVExtr[1]                ; pSltDat[1] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|RxIE                       ; pSltDat[1] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVMidi[2]                ; pSltDat[2] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVMidi[0]                ; pSltDat[0] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|TxIE                       ; pSltDat[0] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|RxIE                       ; pSltDat[0] ; pSltClc     ;
+; N/A   ; None         ; 21.000 ns  ; YM2148:C_2148|IntVExtr[0]                ; pSltDat[0] ; pSltClc     ;
+; N/A   ; None         ; 18.000 ns  ; YM2148:C_2148|txmit:UART_TX|txd          ; pMidiTx_n  ; pCrtClc     ;
+; N/A   ; None         ; 18.000 ns  ; YM2148:C_2148|txmit:UART_TX|clk1x_enable ; pSltInt_n  ; pCrtClc     ;
+; N/A   ; None         ; 13.000 ns  ; YM2148:C_2148|TxIE                       ; pSltInt_n  ; pSltClc     ;
+; N/A   ; None         ; 13.000 ns  ; YM2148:C_2148|RxIE                       ; pSltInt_n  ; pSltClc     ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltAdr[13] ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltAdr[12] ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltAdr[11] ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltAdr[10] ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltAdr[9]  ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltAdr[8]  ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltAdr[7]  ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltAdr[6]  ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltAdr[5]  ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltAdr[4]  ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltAdr[3]  ;
+; N/A   ; None         ; 10.000 ns  ; TWait                                    ; pSltWait_n ; pSltSel_n   ;
+; N/A   ; None         ; 5.000 ns   ; YM2148:C_2148|KeybST[4]                  ; pST[4]     ; pSltClc     ;
+; N/A   ; None         ; 5.000 ns   ; YM2148:C_2148|KeybST[5]                  ; pST[5]     ; pSltClc     ;
+; N/A   ; None         ; 5.000 ns   ; YM2148:C_2148|KeybST[6]                  ; pST[6]     ; pSltClc     ;
+; N/A   ; None         ; 5.000 ns   ; YM2148:C_2148|KeybST[3]                  ; pST[3]     ; pSltClc     ;
+; N/A   ; None         ; 5.000 ns   ; YM2148:C_2148|KeybST[7]                  ; pST[7]     ; pSltClc     ;
+; N/A   ; None         ; 5.000 ns   ; YM2148:C_2148|KeybST[2]                  ; pST[2]     ; pSltClc     ;
+; N/A   ; None         ; 5.000 ns   ; YM2148:C_2148|KeybST[0]                  ; pST[0]     ; pSltClc     ;
+; N/A   ; None         ; 5.000 ns   ; YM2148:C_2148|KeybST[1]                  ; pST[1]     ; pSltClc     ;
++-------+--------------+------------+------------------------------------------+------------+-------------+
+
+
++--------------------------------------------------------------------------+
+; tpd                                                                      ;
++-------+-------------------+-----------------+-------------+--------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From        ; To           ;
++-------+-------------------+-----------------+-------------+--------------+
+; N/A   ; None              ; 26.000 ns       ; pSltRd_n    ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltIorq_n  ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltM1_n    ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[13] ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[12] ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[11] ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[10] ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[9]  ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[8]  ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[7]  ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[6]  ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[5]  ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[4]  ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[3]  ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltSel_n   ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[2]  ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[1]  ; pSltDat[7]   ;
+; N/A   ; None              ; 26.000 ns       ; pSltAdr[0]  ; pSltDat[7]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltRd_n    ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[13] ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[12] ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[11] ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[10] ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[9]  ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[8]  ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[7]  ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[6]  ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[5]  ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[4]  ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[3]  ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltSel_n   ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[2]  ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[1]  ; pSltDat[4]   ;
+; N/A   ; None              ; 23.800 ns       ; pSltAdr[0]  ; pSltDat[4]   ;
+; N/A   ; None              ; 23.000 ns       ; pSltIorq_n  ; pSltDat[4]   ;
+; N/A   ; None              ; 23.000 ns       ; pSltM1_n    ; pSltDat[4]   ;
+; N/A   ; None              ; 18.800 ns       ; pSD[4]      ; pSltDat[4]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltIorq_n  ; pSltDat[6]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltM1_n    ; pSltDat[6]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltIorq_n  ; pSltDat[5]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltM1_n    ; pSltDat[5]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltIorq_n  ; pSltDat[3]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltM1_n    ; pSltDat[3]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltIorq_n  ; pSltDat[1]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltM1_n    ; pSltDat[1]   ;
+; N/A   ; None              ; 18.000 ns       ; pSD[7]      ; pSltDat[7]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltRd_n    ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltIorq_n  ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltM1_n    ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[13] ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[12] ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[11] ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[10] ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[9]  ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[8]  ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[7]  ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[6]  ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[5]  ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[4]  ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[3]  ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltSel_n   ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[2]  ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[1]  ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[0]  ; pSltDat[2]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltRd_n    ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltIorq_n  ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltM1_n    ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[13] ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[12] ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[11] ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[10] ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[9]  ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[8]  ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[7]  ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[6]  ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[5]  ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[4]  ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[3]  ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltSel_n   ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[2]  ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[1]  ; pSltDat[0]   ;
+; N/A   ; None              ; 18.000 ns       ; pSltAdr[0]  ; pSltDat[0]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltRd_n    ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[13] ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[12] ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[11] ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[10] ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[9]  ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[8]  ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[7]  ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[6]  ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[5]  ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[4]  ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[3]  ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltSel_n   ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[2]  ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[1]  ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[0]  ; pSltDat[6]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltRd_n    ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[13] ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[12] ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[11] ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[10] ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[9]  ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[8]  ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[7]  ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[6]  ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[5]  ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[4]  ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[3]  ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltSel_n   ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[2]  ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[1]  ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[0]  ; pSltDat[5]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltRd_n    ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[13] ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[12] ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[11] ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[10] ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[9]  ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[8]  ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[7]  ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[6]  ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[5]  ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[4]  ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[3]  ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltSel_n   ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[2]  ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[1]  ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[0]  ; pSltDat[3]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltRd_n    ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[13] ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[12] ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[11] ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[10] ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[9]  ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[8]  ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[7]  ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[6]  ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[5]  ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[4]  ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[3]  ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltSel_n   ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[2]  ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[1]  ; pSltDat[1]   ;
+; N/A   ; None              ; 16.500 ns       ; pSltAdr[0]  ; pSltDat[1]   ;
+; N/A   ; None              ; 10.000 ns       ; pSD[6]      ; pSltDat[6]   ;
+; N/A   ; None              ; 10.000 ns       ; pSD[5]      ; pSltDat[5]   ;
+; N/A   ; None              ; 10.000 ns       ; pSD[3]      ; pSltDat[3]   ;
+; N/A   ; None              ; 10.000 ns       ; pSD[1]      ; pSltDat[1]   ;
+; N/A   ; None              ; 10.000 ns       ; pSD[2]      ; pSltDat[2]   ;
+; N/A   ; None              ; 10.000 ns       ; pSD[0]      ; pSltDat[0]   ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[13] ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[12] ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[11] ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[10] ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[9]  ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[8]  ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[7]  ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[6]  ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[5]  ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[4]  ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[3]  ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltSel_n   ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[2]  ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[1]  ; pCrtORM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltRd_n    ; pCrtROM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[13] ; pCrtROM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[12] ; pCrtROM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[11] ; pCrtROM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[10] ; pCrtROM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[9]  ; pCrtROM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[8]  ; pCrtROM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltAdr[7]  ; pCrtROM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltSel_n   ; pCrtROM_n    ;
+; N/A   ; None              ; 10.000 ns       ; pSltIorq_n  ; pSltBusdir_n ;
+; N/A   ; None              ; 10.000 ns       ; pSltM1_n    ; pSltBusdir_n ;
++-------+-------------------+-----------------+-------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                                         ;
++-----------------------------------------+-----------------------------------------------------+-----------+-------------+------------------------------------+-------------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From        ; To                                 ; To Clock    ;
++-----------------------------------------+-----------------------------------------------------+-----------+-------------+------------------------------------+-------------+
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltWr_n    ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[13] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[12] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[11] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[10] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[9]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[8]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[7]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[6]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[5]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[4]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[3]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltSel_n   ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[2]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[1]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[6]  ; YM2148:C_2148|txmit:UART_TX|tbr[1] ; pSltAdr[0]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltWr_n    ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[13] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[12] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[11] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[10] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[9]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[8]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[7]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[6]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[5]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[4]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[3]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltSel_n   ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[2]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[1]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[5]  ; YM2148:C_2148|txmit:UART_TX|tbr[2] ; pSltAdr[0]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltWr_n    ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[13] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[12] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[11] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[10] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[9]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[8]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[7]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[6]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[5]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[4]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[3]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltSel_n   ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[2]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[1]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[4]  ; YM2148:C_2148|txmit:UART_TX|tbr[3] ; pSltAdr[0]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltWr_n    ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[13] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[12] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[11] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[10] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[9]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[8]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[7]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[6]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[5]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[4]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[3]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltSel_n   ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[2]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[1]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[3]  ; YM2148:C_2148|txmit:UART_TX|tbr[4] ; pSltAdr[0]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltWr_n    ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[13] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[12] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[11] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[10] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[9]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[8]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[7]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[6]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[5]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[4]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[3]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltSel_n   ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[2]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[1]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[1]  ; YM2148:C_2148|txmit:UART_TX|tbr[6] ; pSltAdr[0]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltWr_n    ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[13] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[12] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[11] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[10] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[9]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[8]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[7]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[6]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[5]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[4]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[3]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltSel_n   ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[2]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[1]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[7]  ; YM2148:C_2148|txmit:UART_TX|tbr[0] ; pSltAdr[0]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltWr_n    ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[13] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[12] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[11] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[10] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[9]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[8]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[7]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[6]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[5]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[4]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[3]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltSel_n   ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[2]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[1]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[2]  ; YM2148:C_2148|txmit:UART_TX|tbr[5] ; pSltAdr[0]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltWr_n    ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[13] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[12] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[11] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[10] ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[9]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[8]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[7]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[6]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[5]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[4]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[3]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltSel_n   ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[2]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[1]  ;
+; N/A                                     ; None                                                ; 8.000 ns  ; pSltDat[0]  ; YM2148:C_2148|txmit:UART_TX|tbr[7] ; pSltAdr[0]  ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[0]  ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[1]  ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[2]  ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltWr_n    ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltSel_n   ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[3]  ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[4]  ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[5]  ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[6]  ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[7]  ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[8]  ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[9]  ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[10] ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[11] ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[12] ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pSltAdr[13] ; YM2148:C_2148|txmit:UART_TX|wrn1   ; pCrtClc     ;
+; N/A                                     ; None                                                ; 3.000 ns  ; pMidiRx     ; YM2148:C_2148|rcvr:UART_RX|rxd1    ; pCrtClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVMidi[0]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|RxEN                 ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVMidi[7]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVExtr[7]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|TxEN                 ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|TxIE                 ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVMidi[1]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVExtr[1]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|RxIE                 ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVMidi[3]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVExtr[3]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVExtr[2]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVMidi[2]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVExtr[0]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVExtr[4]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVMidi[4]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVMidi[5]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVExtr[5]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVMidi[6]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|IntVExtr[6]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|KeybST[1]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|KeybST[0]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|KeybST[2]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|KeybST[7]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|KeybST[6]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|KeybST[3]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|KeybST[5]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[0]  ; YM2148:C_2148|KeybST[4]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVMidi[0]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|RxEN                 ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVMidi[7]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVExtr[7]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|TxEN                 ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|TxIE                 ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVMidi[1]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVExtr[1]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|RxIE                 ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVMidi[3]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVExtr[3]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVExtr[2]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVMidi[2]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVExtr[0]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVExtr[4]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVMidi[4]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVMidi[5]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVExtr[5]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVMidi[6]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|IntVExtr[6]          ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|KeybST[1]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|KeybST[0]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|KeybST[2]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|KeybST[7]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|KeybST[6]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|KeybST[3]            ; pSltClc     ;
+; N/A                                     ; None                                                ; -2.000 ns ; pSltAdr[1]  ; YM2148:C_2148|KeybST[5]            ; pSltClc     ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;             ;                                    ;             ;
++-----------------------------------------+-----------------------------------------------------+-----------+-------------+------------------------------------+-------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Sun Mar 12 20:17:13 2017
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off SFG05S -c SFG05S
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Timing Analysis does not support the analysis of latches as synchronous elements for the currently selected device family
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "pSltClc" is an undefined clock
+    Info: Assuming node "pCrtClc" is an undefined clock
+    Info: Assuming node "pSltAdr[13]" is an undefined clock
+    Info: Assuming node "pSltAdr[12]" is an undefined clock
+    Info: Assuming node "pSltAdr[11]" is an undefined clock
+    Info: Assuming node "pSltAdr[10]" is an undefined clock
+    Info: Assuming node "pSltAdr[9]" is an undefined clock
+    Info: Assuming node "pSltAdr[8]" is an undefined clock
+    Info: Assuming node "pSltAdr[7]" is an undefined clock
+    Info: Assuming node "pSltAdr[6]" is an undefined clock
+    Info: Assuming node "pSltAdr[5]" is an undefined clock
+    Info: Assuming node "pSltAdr[4]" is an undefined clock
+    Info: Assuming node "pSltAdr[3]" is an undefined clock
+    Info: Assuming node "pSltSel_n" is an undefined clock
+    Info: Assuming node "pSltWr_n" is an undefined clock
+    Info: Assuming node "pSltAdr[2]" is an undefined clock
+    Info: Assuming node "pSltAdr[1]" is an undefined clock
+    Info: Assuming node "pSltAdr[0]" is an undefined clock
+Warning: Found 7 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "YM2148:C_2148|wrn~29" as buffer
+    Info: Detected gated clock "YM2148:C_2148|wrn~28" as buffer
+    Info: Detected gated clock "YM2148:C_2148|wrn~27" as buffer
+    Info: Detected gated clock "YM2148:C_2148|wrn~19" as buffer
+    Info: Detected ripple clock "YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6]" as buffer
+    Info: Detected ripple clock "YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[6]" as buffer
+    Info: Detected ripple clock "YM2148:C_2148|rcvr:UART_RX|clk1x_enable" as buffer
+Info: No valid register-to-register data paths exist for clock "pSltClc"
+Info: Clock "pCrtClc" has Internal fmax of 27.78 MHz between source register "YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3]" and destination register "YM2148:C_2148|txmit:UART_TX|clk1x_enable" (period= 36.0 ns)
+    Info: + Longest register to register delay is 6.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC13; Fanout = 69; REG Node = 'YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3]'
+        Info: 2: + IC(1.000 ns) + CELL(5.000 ns) = 6.000 ns; Loc. = LC64; Fanout = 41; REG Node = 'YM2148:C_2148|txmit:UART_TX|clk1x_enable'
+        Info: Total cell delay = 5.000 ns ( 83.33 % )
+        Info: Total interconnect delay = 1.000 ns ( 16.67 % )
+    Info: - Smallest clock skew is -8.000 ns
+        Info: + Shortest clock path from clock "pCrtClc" to destination register is 6.500 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.500 ns) = 1.500 ns; Loc. = PIN_90; Fanout = 20; CLK Node = 'pCrtClc'
+            Info: 2: + IC(0.000 ns) + CELL(5.000 ns) = 6.500 ns; Loc. = LC64; Fanout = 41; REG Node = 'YM2148:C_2148|txmit:UART_TX|clk1x_enable'
+            Info: Total cell delay = 6.500 ns ( 100.00 % )
+        Info: - Longest clock path from clock "pCrtClc" to source register is 14.500 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.500 ns) = 1.500 ns; Loc. = PIN_90; Fanout = 20; CLK Node = 'pCrtClc'
+            Info: 2: + IC(0.000 ns) + CELL(7.000 ns) = 8.500 ns; Loc. = LC131; Fanout = 17; REG Node = 'YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6]'
+            Info: 3: + IC(1.000 ns) + CELL(5.000 ns) = 14.500 ns; Loc. = LC13; Fanout = 69; REG Node = 'YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3]'
+            Info: Total cell delay = 13.500 ns ( 93.10 % )
+            Info: Total interconnect delay = 1.000 ns ( 6.90 % )
+    Info: + Micro clock to output delay of source is 2.000 ns
+    Info: + Micro setup delay of destination is 2.000 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: No valid register-to-register data paths exist for clock "pSltAdr[13]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[12]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[11]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[10]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[9]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[8]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[7]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[6]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[5]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[4]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[3]"
+Info: No valid register-to-register data paths exist for clock "pSltSel_n"
+Info: No valid register-to-register data paths exist for clock "pSltWr_n"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[2]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[1]"
+Info: No valid register-to-register data paths exist for clock "pSltAdr[0]"
+Warning: Circuit may not operate. Detected 10 non-operational path(s) clocked by clock "pCrtClc" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "YM2148:C_2148|rcvr:UART_RX|clk1x_enable" and destination pin or register "YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]" for clock "pCrtClc" (Hold time is 3.0 ns)
+    Info: + Largest clock skew is 8.000 ns
+        Info: + Longest clock path from clock "pCrtClc" to destination register is 14.500 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.500 ns) = 1.500 ns; Loc. = PIN_90; Fanout = 20; CLK Node = 'pCrtClc'
+            Info: 2: + IC(0.000 ns) + CELL(7.000 ns) = 8.500 ns; Loc. = LC80; Fanout = 24; REG Node = 'YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[6]'
+            Info: 3: + IC(1.000 ns) + CELL(5.000 ns) = 14.500 ns; Loc. = LC66; Fanout = 85; REG Node = 'YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]'
+            Info: Total cell delay = 13.500 ns ( 93.10 % )
+            Info: Total interconnect delay = 1.000 ns ( 6.90 % )
+        Info: - Shortest clock path from clock "pCrtClc" to source register is 6.500 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.500 ns) = 1.500 ns; Loc. = PIN_90; Fanout = 20; CLK Node = 'pCrtClc'
+            Info: 2: + IC(0.000 ns) + CELL(5.000 ns) = 6.500 ns; Loc. = LC33; Fanout = 15; REG Node = 'YM2148:C_2148|rcvr:UART_RX|clk1x_enable'
+            Info: Total cell delay = 6.500 ns ( 100.00 % )
+    Info: - Micro clock to output delay of source is 2.000 ns
+    Info: - Shortest register to register delay is 6.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC33; Fanout = 15; REG Node = 'YM2148:C_2148|rcvr:UART_RX|clk1x_enable'
+        Info: 2: + IC(1.000 ns) + CELL(5.000 ns) = 6.000 ns; Loc. = LC66; Fanout = 85; REG Node = 'YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]'
+        Info: Total cell delay = 5.000 ns ( 83.33 % )
+        Info: Total interconnect delay = 1.000 ns ( 16.67 % )
+    Info: + Micro hold delay of destination is 3.000 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "YM2148:C_2148|IntVMidi[0]" (data pin = "pSltAdr[0]", clock pin = "pSltClc") is 7.000 ns
+    Info: + Longest pin to register delay is 6.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.500 ns) = 0.500 ns; Loc. = PIN_60; Fanout = 78; CLK Node = 'pSltAdr[0]'
+        Info: 2: + IC(1.000 ns) + CELL(5.000 ns) = 6.500 ns; Loc. = LC12; Fanout = 4; REG Node = 'YM2148:C_2148|IntVMidi[0]'
+        Info: Total cell delay = 5.500 ns ( 84.62 % )
+        Info: Total interconnect delay = 1.000 ns ( 15.38 % )
+    Info: + Micro setup delay of destination is 2.000 ns
+    Info: - Shortest clock path from clock "pSltClc" to destination register is 1.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.500 ns) = 1.500 ns; Loc. = PIN_87; Fanout = 29; CLK Node = 'pSltClc'
+        Info: 2: + IC(0.000 ns) + CELL(0.000 ns) = 1.500 ns; Loc. = LC12; Fanout = 4; REG Node = 'YM2148:C_2148|IntVMidi[0]'
+        Info: Total cell delay = 1.500 ns ( 100.00 % )
+Info: tco from clock "pCrtClc" to destination pin "pSltDat[7]" through register "YM2148:C_2148|rcvr:UART_RX|dr" is 42.000 ns
+    Info: + Longest clock path from clock "pCrtClc" to source register is 14.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.500 ns) = 1.500 ns; Loc. = PIN_90; Fanout = 20; CLK Node = 'pCrtClc'
+        Info: 2: + IC(0.000 ns) + CELL(7.000 ns) = 8.500 ns; Loc. = LC33; Fanout = 15; REG Node = 'YM2148:C_2148|rcvr:UART_RX|clk1x_enable'
+        Info: 3: + IC(1.000 ns) + CELL(5.000 ns) = 14.500 ns; Loc. = LC90; Fanout = 20; REG Node = 'YM2148:C_2148|rcvr:UART_RX|dr'
+        Info: Total cell delay = 13.500 ns ( 93.10 % )
+        Info: Total interconnect delay = 1.000 ns ( 6.90 % )
+    Info: + Micro clock to output delay of source is 2.000 ns
+    Info: + Longest register to pin delay is 25.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC90; Fanout = 20; REG Node = 'YM2148:C_2148|rcvr:UART_RX|dr'
+        Info: 2: + IC(1.000 ns) + CELL(7.000 ns) = 8.000 ns; Loc. = LC142; Fanout = 1; COMB Node = 'YM2148:C_2148|pSltDat[7]~313'
+        Info: 3: + IC(1.000 ns) + CELL(7.000 ns) = 16.000 ns; Loc. = LC95; Fanout = 1; COMB Node = 'YM2148:C_2148|pSltDat[7]~324'
+        Info: 4: + IC(1.000 ns) + CELL(7.000 ns) = 24.000 ns; Loc. = LC112; Fanout = 1; COMB Node = 'YM2148:C_2148|pSltDat[7]~334'
+        Info: 5: + IC(0.000 ns) + CELL(1.500 ns) = 25.500 ns; Loc. = PIN_57; Fanout = 0; PIN Node = 'pSltDat[7]'
+        Info: Total cell delay = 22.500 ns ( 88.24 % )
+        Info: Total interconnect delay = 3.000 ns ( 11.76 % )
+Info: Longest tpd from source pin "pSltRd_n" to destination pin "pSltDat[7]" is 26.000 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.500 ns) = 0.500 ns; Loc. = PIN_65; Fanout = 44; PIN Node = 'pSltRd_n'
+    Info: 2: + IC(1.000 ns) + CELL(7.000 ns) = 8.500 ns; Loc. = LC156; Fanout = 2; COMB Node = 'YM2148:C_2148|pSltDat[0]~201'
+    Info: 3: + IC(1.000 ns) + CELL(7.000 ns) = 16.500 ns; Loc. = LC95; Fanout = 1; COMB Node = 'YM2148:C_2148|pSltDat[7]~324'
+    Info: 4: + IC(1.000 ns) + CELL(7.000 ns) = 24.500 ns; Loc. = LC112; Fanout = 1; COMB Node = 'YM2148:C_2148|pSltDat[7]~334'
+    Info: 5: + IC(0.000 ns) + CELL(1.500 ns) = 26.000 ns; Loc. = PIN_57; Fanout = 0; PIN Node = 'pSltDat[7]'
+    Info: Total cell delay = 23.000 ns ( 88.46 % )
+    Info: Total interconnect delay = 3.000 ns ( 11.54 % )
+Info: th for register "YM2148:C_2148|txmit:UART_TX|tbr[1]" (data pin = "pSltDat[6]", clock pin = "pSltWr_n") is 8.000 ns
+    Info: + Longest clock path from clock "pSltWr_n" to destination register is 11.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.500 ns) = 0.500 ns; Loc. = PIN_1; Fanout = 40; CLK Node = 'pSltWr_n'
+        Info: 2: + IC(1.000 ns) + CELL(5.000 ns) = 6.500 ns; Loc. = SEXP19; Fanout = 2; COMB Node = 'YM2148:C_2148|wrn~27'
+        Info: 3: + IC(0.000 ns) + CELL(5.000 ns) = 11.500 ns; Loc. = LC27; Fanout = 1; REG Node = 'YM2148:C_2148|txmit:UART_TX|tbr[1]'
+        Info: Total cell delay = 10.500 ns ( 91.30 % )
+        Info: Total interconnect delay = 1.000 ns ( 8.70 % )
+    Info: + Micro hold delay of destination is 3.000 ns
+    Info: - Shortest pin to register delay is 6.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_55; Fanout = 1; PIN Node = 'pSltDat[6]'
+        Info: 2: + IC(0.000 ns) + CELL(0.500 ns) = 0.500 ns; Loc. = IO109; Fanout = 4; COMB Node = 'pSltDat[6]~1'
+        Info: 3: + IC(1.000 ns) + CELL(5.000 ns) = 6.500 ns; Loc. = LC27; Fanout = 1; REG Node = 'YM2148:C_2148|txmit:UART_TX|tbr[1]'
+        Info: Total cell delay = 5.500 ns ( 84.62 % )
+        Info: Total interconnect delay = 1.000 ns ( 15.38 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 180 megabytes
+    Info: Processing ended: Sun Mar 12 20:17:13 2017
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

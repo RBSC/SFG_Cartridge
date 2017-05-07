@@ -86,7 +86,7 @@ Count  ComponentName   RefDes          PatternName     Value
      4 R_0603          R9              R0603_101A      4k7            
                        R12                                                                            
                        R14                                                                            
-                       R34                                                                            
+                       R33                                                                            
      2 R_0603          R10             R0603_101A      4.7k           
                        R11                                                                            
     14 R_0603          R6              R0603_101A      10k            
@@ -111,7 +111,7 @@ Count  ComponentName   RefDes          PatternName     Value
                        R19                                                                            
                        R30                                                                            
                        R32                                                                            
-                       R33                                                                            
+                       R34                                                                            
      1 R_0603          R31             R0603_101A      330            
      1 R_0603          R37             R0603_101A      390            
      2 R_0603          R16             R0603_101A      560            

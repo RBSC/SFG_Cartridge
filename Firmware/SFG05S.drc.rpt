@@ -1,0 +1,509 @@
+Design Assistant report for SFG05S
+Sun Mar 12 20:10:09 2017
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant Summary
+  3. Design Assistant Settings
+  4. Critical Violations
+  5. High Violations
+  6. Medium Violations
+  7. Information only Violations
+  8. Design Assistant Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Design Assistant Summary                                                ;
++-----------------------------------+-------------------------------------+
+; Design Assistant Status           ; Analyzed - Sun Mar 12 20:10:09 2017 ;
+; Revision Name                     ; SFG05S                              ;
+; Top-level Entity Name             ; SFG05S                              ;
+; Family                            ; MAX7000S                            ;
+; Total Critical Violations         ; 5                                   ;
+; - Rule C101                       ; 5                                   ;
+; Total High Violations             ; 28                                  ;
+; - Rule R101                       ; 10                                  ;
+; - Rule S102                       ; 2                                   ;
+; - Rule S104                       ; 8                                   ;
+; - Rule D101                       ; 8                                   ;
+; Total Medium Violations           ; 10                                  ;
+; - Rule C103                       ; 5                                   ;
+; - Rule C105                       ; 3                                   ;
+; - Rule R102                       ; 1                                   ;
+; - Rule R105                       ; 1                                   ;
+; Total Information only Violations ; 68                                  ;
+; - Rule T101                       ; 18                                  ;
+; - Rule T102                       ; 50                                  ;
++-----------------------------------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant Settings                                                                                                                                                                                                                                                                                    ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+; Option                                                                                                                                                                                                                                                                                   ; Setting      ; To ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+; Design Assistant mode                                                                                                                                                                                                                                                                    ; Post-Fitting ;    ;
+; Threshold value for clock net not mapped to clock spines rule                                                                                                                                                                                                                            ; 25           ;    ;
+; Minimum number of clock port feed by gated clocks                                                                                                                                                                                                                                        ; 30           ;    ;
+; Minimum number of node fan-out                                                                                                                                                                                                                                                           ; 30           ;    ;
+; Maximum number of nodes to report                                                                                                                                                                                                                                                        ; 50           ;    ;
+; Rule C101: Gated clock should be implemented according to the Altera standard scheme                                                                                                                                                                                                     ; On           ;    ;
+; Rule C102: Logic cell should not be used to generate inverted clock                                                                                                                                                                                                                      ; On           ;    ;
+; Rule C103: Gated clock is not feeding at least a pre-defined number of clock port to effectively save power                                                                                                                                                                              ; On           ;    ;
+; Rule C104: Clock signal source should drive only input clock ports                                                                                                                                                                                                                       ; On           ;    ;
+; Rule C105: Clock signal should be a global signal (Rule applies during post-fitting analysis. This rule applies during both post-fitting analysis and post-synthesis analysis if the design targets a MAX 3000 or MAX 7000 device. For more information, see the Help for the rule.)     ; On           ;    ;
+; Rule C106: Clock signal source should not drive registers that are triggered by different clock edges                                                                                                                                                                                    ; On           ;    ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                                                                                                                                                                                             ; On           ;    ;
+; Rule R102: External reset should be synchronized using two cascaded registers                                                                                                                                                                                                            ; On           ;    ;
+; Rule R103: External reset should be correctly synchronized                                                                                                                                                                                                                               ; On           ;    ;
+; Rule R104: The reset signal that is generated in one clock domain and is used in the other clock domain, should be correctly synchronized                                                                                                                                                ; On           ;    ;
+; Rule R105: The reset signal that is generated in one clock domain and is used in the other clock domain, should be synchronized                                                                                                                                                          ; On           ;    ;
+; Rule T101: Nodes with more than the specified number of fan-outs                                                                                                                                                                                                                         ; On           ;    ;
+; Rule T102: Top nodes with the highest number of fan-outs                                                                                                                                                                                                                                 ; On           ;    ;
+; Rule A101: Design should not contain combinational loops                                                                                                                                                                                                                                 ; On           ;    ;
+; Rule A102: Register output should not drive its own control signal directly or through combinational logic                                                                                                                                                                               ; On           ;    ;
+; Rule A103: Design should not contain delay chains                                                                                                                                                                                                                                        ; On           ;    ;
+; Rule A104: Design should not contain ripple clock structures                                                                                                                                                                                                                             ; On           ;    ;
+; Rule A105: Pulses should not be implemented asynchronously                                                                                                                                                                                                                               ; On           ;    ;
+; Rule A106: Multiple pulses should not be generated in design                                                                                                                                                                                                                             ; On           ;    ;
+; Rule A107: Design should not contain SR latches                                                                                                                                                                                                                                          ; On           ;    ;
+; Rule A108: Design should not contain latches                                                                                                                                                                                                                                             ; On           ;    ;
+; Rule A109: Combinational logic should not directly drive write enable signal of asynchronous RAM                                                                                                                                                                                         ; On           ;    ;
+; Rule A110: Design should not contain asynchronous memory                                                                                                                                                                                                                                 ; On           ;    ;
+; Rule S101: Output enable and input of the same tri-state node should not be driven by same signal source                                                                                                                                                                                 ; On           ;    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source                                                                                                                                                                    ; On           ;    ;
+; Rule S103: More than one asynchronous signal port of the same register should not be driven by the same signal source                                                                                                                                                                    ; On           ;    ;
+; Rule S104: Clock port and any other signal port of same register should not be driven by the same signal source                                                                                                                                                                          ; On           ;    ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains                                                                                                                                                                                            ; On           ;    ;
+; Rule D102: Multiple data bits that are transferred across asynchronous clock domains are synchronized, but not all bits may be aligned in the receiving clock domain                                                                                                                     ; On           ;    ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains                                                                                                                                                                                  ; On           ;    ;
+; Rule H101: Only one VREF pin should be assigned to the HardCopy test pin in an I/O bank (Rule does not apply to all HardCopy and HardCopy Stratix devices. This rule is used to analyze a design only when the rule applies to the design's target HardCopy or HardCopy Stratix device.) ; On           ;    ;
+; Rule H102: PLL clock output drives multiple clock network types (Rule does not apply to all HardCopy and HardCopy Stratix devices. This rule is used to analyze a design only when the rule applies to the design's target HardCopy or HardCopy Stratix device.)                         ; On           ;    ;
+; Rule M101: Data bits are not synchronized when transferred to the state machine of asynchronous clock domains                                                                                                                                                                            ; Off          ;    ;
+; Rule M102: No reset signal defined to initialize the state machine                                                                                                                                                                                                                       ; Off          ;    ;
+; Rule M103: State machine should not contain an unreachable state                                                                                                                                                                                                                         ; Off          ;    ;
+; Rule M104: State machine should not contain a deadlock state                                                                                                                                                                                                                             ; Off          ;    ;
+; Rule M105: State machine should not contain a dead transition                                                                                                                                                                                                                            ; Off          ;    ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Critical Violations                                                                                                       ;
++--------------------------------------------------------------------------------------+------------------------------------+
+; Rule name                                                                            ; Name                               ;
++--------------------------------------------------------------------------------------+------------------------------------+
+; Rule C101: Gated clock should be implemented according to the Altera standard scheme ; YM2148:C_2148|wrn~19               ;
+;  Gated clock destination node(s) list                                                ; YM2148:C_2148|txmit:UART_TX|tbr[5] ;
+;  Gated clock destination node(s) list                                                ; YM2148:C_2148|txmit:UART_TX|tbr[6] ;
+;  Gated clock destination node(s) list                                                ; YM2148:C_2148|txmit:UART_TX|tbr[7] ;
+; Rule C101: Gated clock should be implemented according to the Altera standard scheme ; YM2148:C_2148|wrn~27               ;
+;  Gated clock destination node(s) list                                                ; YM2148:C_2148|txmit:UART_TX|tbr[1] ;
+;  Gated clock destination node(s) list                                                ; YM2148:C_2148|txmit:UART_TX|tbr[0] ;
+; Rule C101: Gated clock should be implemented according to the Altera standard scheme ; YM2148:C_2148|wrn~28               ;
+;  Gated clock destination node(s) list                                                ; YM2148:C_2148|txmit:UART_TX|tbr[4] ;
+; Rule C101: Gated clock should be implemented according to the Altera standard scheme ; YM2148:C_2148|wrn~29               ;
+;  Gated clock destination node(s) list                                                ; YM2148:C_2148|txmit:UART_TX|tbr[3] ;
+;  Gated clock destination node(s) list                                                ; YM2148:C_2148|txmit:UART_TX|tbr[2] ;
+; Rule C101: Gated clock should be implemented according to the Altera standard scheme ; TWait                              ;
+;  Gated clock destination node(s) list                                                ; TWait                              ;
++--------------------------------------------------------------------------------------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; High Violations                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+; Rule name                                                                                                             ; Name                                                               ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                          ; YM2148:C_2148|rstrx~41                                             ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rxd1                                    ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                          ; YM2148:C_2148|rcvr:UART_RX|process_2~13                            ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[6]        ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[5]        ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[4]        ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[3]        ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[2]        ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[1]        ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[0]        ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                          ; YM2148:C_2148|rstrx~22                                             ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rbr[6]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rbr[5]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rbr[4]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rsr[1]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rsr[2]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rsr[3]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rsr[4]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rbr[7]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rsr[0]                                  ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                          ; YM2148:C_2148|rsttx~30bal                                          ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|txd                                    ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|tsr[7]                                 ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|tsr[6]                                 ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|tsr[5]                                 ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|tsr[4]                                 ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|tsr[3]                                 ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|tsr[2]                                 ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|tbr[3]                                 ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|tbr[2]                                 ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|tsr[1]                                 ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                          ; YM2148:C_2148|txmit:UART_TX|process_5~4                            ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                          ; YM2148:C_2148|rstrx~40                                             ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rbr[0]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rsr[7]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rbr[2]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rsr[5]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rbr[3]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rbr[1]                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rsr[6]                                  ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                          ; YM2148:C_2148|rcvr:UART_RX|process_5~2                             ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|dr                                      ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                          ; YM2148:C_2148|rstrx~42                                             ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|rxd2                                    ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                          ; YM2148:C_2148|rcvr:UART_RX|process_1~5                             ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable                            ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                          ; YM2148:C_2148|rcvr:UART_RX|rste~1                                  ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|e_framing                               ;
+;  Reset signal destination node(s) list                                                                                ; YM2148:C_2148|rcvr:UART_RX|e_overrun                               ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source ; YM2148:C_2148|txmit:UART_TX|wrn1                                   ;
+;  Synchronous and reset port source node(s) list                                                                       ; pSltAdr[13]                                                        ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source ; YM2148:C_2148|txmit:UART_TX|tbr[0]                                 ;
+;  Synchronous and reset port source node(s) list (tri-state)                                                           ; pSltDat[7]~0                                                       ;
+; Rule S104: Clock port and any other signal port of same register should not be driven by the same signal source       ; YM2148:C_2148|txmit:UART_TX|tbr[7]                                 ;
+;  Violated clock and other port source node(s) list                                                                    ; pSltAdr[13]                                                        ;
+; Rule S104: Clock port and any other signal port of same register should not be driven by the same signal source       ; YM2148:C_2148|txmit:UART_TX|tbr[6]                                 ;
+;  Violated clock and other port source node(s) list                                                                    ; pSltAdr[13]                                                        ;
+; Rule S104: Clock port and any other signal port of same register should not be driven by the same signal source       ; YM2148:C_2148|txmit:UART_TX|tbr[5]                                 ;
+;  Violated clock and other port source node(s) list                                                                    ; pSltAdr[13]                                                        ;
+; Rule S104: Clock port and any other signal port of same register should not be driven by the same signal source       ; YM2148:C_2148|txmit:UART_TX|tbr[0]                                 ;
+;  Violated clock and other port source node(s) list                                                                    ; pSltAdr[13]                                                        ;
+; Rule S104: Clock port and any other signal port of same register should not be driven by the same signal source       ; YM2148:C_2148|txmit:UART_TX|tbr[4]                                 ;
+;  Violated clock and other port source node(s) list                                                                    ; pSltAdr[13]                                                        ;
+; Rule S104: Clock port and any other signal port of same register should not be driven by the same signal source       ; YM2148:C_2148|txmit:UART_TX|tbr[1]                                 ;
+;  Violated clock and other port source node(s) list                                                                    ; pSltAdr[13]                                                        ;
+; Rule S104: Clock port and any other signal port of same register should not be driven by the same signal source       ; YM2148:C_2148|txmit:UART_TX|tbr[2]                                 ;
+;  Violated clock and other port source node(s) list                                                                    ; pSltAdr[13]                                                        ;
+; Rule S104: Clock port and any other signal port of same register should not be driven by the same signal source       ; YM2148:C_2148|txmit:UART_TX|tbr[3]                                 ;
+;  Violated clock and other port source node(s) list                                                                    ; pSltAdr[13]                                                        ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 1           ;                                                                    ;
+;  Source node(s) from clock "pSltAdr[13]"                                                                              ; YM2148:C_2148|txmit:UART_TX|tbr[7]                                 ;
+;  Destination node(s) from clock "pCrtClc"                                                                             ; YM2148:C_2148|txmit:UART_TX|tsr[7]                                 ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 2           ;                                                                    ;
+;  Source node(s) from clock "pSltAdr[13]"                                                                              ; YM2148:C_2148|txmit:UART_TX|tbr[6]                                 ;
+;  Destination node(s) from clock "pCrtClc"                                                                             ; YM2148:C_2148|txmit:UART_TX|tsr[6]                                 ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 3           ;                                                                    ;
+;  Source node(s) from clock "pSltAdr[13]"                                                                              ; YM2148:C_2148|txmit:UART_TX|tbr[5]                                 ;
+;  Destination node(s) from clock "pCrtClc"                                                                             ; YM2148:C_2148|txmit:UART_TX|tsr[5]                                 ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 4           ;                                                                    ;
+;  Source node(s) from clock "pSltAdr[13]"                                                                              ; YM2148:C_2148|txmit:UART_TX|tbr[0]                                 ;
+;  Destination node(s) from clock "pCrtClc"                                                                             ; YM2148:C_2148|txmit:UART_TX|tsr[0]                                 ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 5           ;                                                                    ;
+;  Source node(s) from clock "pSltAdr[13]"                                                                              ; YM2148:C_2148|txmit:UART_TX|tbr[4]                                 ;
+;  Destination node(s) from clock "pCrtClc"                                                                             ; YM2148:C_2148|txmit:UART_TX|tsr[4]                                 ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 6           ;                                                                    ;
+;  Source node(s) from clock "pSltAdr[13]"                                                                              ; YM2148:C_2148|txmit:UART_TX|tbr[1]                                 ;
+;  Destination node(s) from clock "pCrtClc"                                                                             ; YM2148:C_2148|txmit:UART_TX|tsr[1]                                 ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 7           ;                                                                    ;
+;  Source node(s) from clock "pSltAdr[13]"                                                                              ; YM2148:C_2148|txmit:UART_TX|tbr[2]                                 ;
+;  Destination node(s) from clock "pCrtClc"                                                                             ; YM2148:C_2148|txmit:UART_TX|tsr[2]                                 ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 8           ;                                                                    ;
+;  Source node(s) from clock "pSltAdr[13]"                                                                              ; YM2148:C_2148|txmit:UART_TX|tbr[3]                                 ;
+;  Destination node(s) from clock "pCrtClc"                                                                             ; YM2148:C_2148|txmit:UART_TX|tsr[3]                                 ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Medium Violations                                                                                                                                                                                    ;
++---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+; Rule name                                                                                                                       ; Name                                                               ;
++---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+; Rule C103: Gated clock is not feeding at least a pre-defined number of clock port to effectively save power                     ; YM2148:C_2148|wrn~19                                               ;
+;  Gated clock destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tbr[5]                                 ;
+;  Gated clock destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tbr[6]                                 ;
+;  Gated clock destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tbr[7]                                 ;
+; Rule C103: Gated clock is not feeding at least a pre-defined number of clock port to effectively save power                     ; YM2148:C_2148|wrn~27                                               ;
+;  Gated clock destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tbr[1]                                 ;
+;  Gated clock destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tbr[0]                                 ;
+; Rule C103: Gated clock is not feeding at least a pre-defined number of clock port to effectively save power                     ; YM2148:C_2148|wrn~28                                               ;
+;  Gated clock destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tbr[4]                                 ;
+; Rule C103: Gated clock is not feeding at least a pre-defined number of clock port to effectively save power                     ; YM2148:C_2148|wrn~29                                               ;
+;  Gated clock destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tbr[3]                                 ;
+;  Gated clock destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tbr[2]                                 ;
+; Rule C103: Gated clock is not feeding at least a pre-defined number of clock port to effectively save power                     ; TWait                                                              ;
+;  Gated clock destination node(s) list                                                                                           ; TWait                                                              ;
+; Rule C104: Clock signal source should drive only input clock ports                                                              ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable                            ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|rcvr:UART_RX|dr                                      ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[6]        ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[5]        ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[4]        ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[3]        ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[2]        ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[0]        ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[1]        ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ;
+; Rule C104: Clock signal source should drive only input clock ports                                                              ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[6]        ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|rcvr:UART_RX|rbr[6]                                  ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|rcvr:UART_RX|e_framing                               ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|rcvr:UART_RX|rbr[5]                                  ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|rcvr:UART_RX|rbr[4]                                  ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|rcvr:UART_RX|e_overrun                               ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|rcvr:UART_RX|rbr[0]                                  ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|rcvr:UART_RX|rsr[7]                                  ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|rcvr:UART_RX|process_1~7sexp                         ;
+; Rule C104: Clock signal source should drive only input clock ports                                                              ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6]       ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|txd                                    ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tsr[7]                                 ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tsr[6]                                 ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tsr[5]                                 ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tsr[4]                                 ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tsr[3]                                 ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tsr[2]                                 ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tsr[1]                                 ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|tsr[0]                                 ;
+;  Clock ports destination node(s) list                                                                                           ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ;
+;  Non-clock ports destination node(s) list                                                                                       ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                           ;
+; Rule R102: External reset should be synchronized using two cascaded registers                                                   ; pSltRst_n                                                          ;
+;  Reset signal destination node(s) list                                                                                          ; YM2148:C_2148|IntVExtr[6]                                          ;
+;  Reset signal destination node(s) list                                                                                          ; YM2148:C_2148|IntVMidi[6]                                          ;
+;  Reset signal destination node(s) list                                                                                          ; YM2148:C_2148|IntVExtr[5]                                          ;
+;  Reset signal destination node(s) list                                                                                          ; YM2148:C_2148|IntVMidi[5]                                          ;
+;  Reset signal destination node(s) list                                                                                          ; YM2148:C_2148|IntVMidi[4]                                          ;
+;  Reset signal destination node(s) list                                                                                          ; YM2148:C_2148|IntVExtr[4]                                          ;
+;  Reset signal destination node(s) list                                                                                          ; YM2148:C_2148|IntVExtr[0]                                          ;
+;  Reset signal destination node(s) list                                                                                          ; YM2148:C_2148|IntVMidi[0]                                          ;
+;  Reset signal destination node(s) list                                                                                          ; YM2148:C_2148|RxEN                                                 ;
+;  Reset signal destination node(s) list                                                                                          ; YM2148:C_2148|IntVMidi[2]                                          ;
+; Rule R105: The reset signal that is generated in one clock domain and is used in the other clock domain, should be synchronized ; rstTWait                                                           ;
+;  Reset signal destination node(s) from clock "pSltAdr[13]"                                                                      ; TWait                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Information only Violations                                                                                                                         ;
++----------------------------------------------------------------------+--------------------------------------------------------------------+---------+
+; Rule name                                                            ; Name                                                               ; Fan-Out ;
++----------------------------------------------------------------------+--------------------------------------------------------------------+---------+
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltRst_n                                                          ; 38      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; 31      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[13]                                                        ; 72      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[12]                                                        ; 72      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[11]                                                        ; 72      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[10]                                                        ; 72      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[9]                                                         ; 72      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[8]                                                         ; 72      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[7]                                                         ; 72      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[6]                                                         ; 71      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[5]                                                         ; 71      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[4]                                                         ; 71      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[3]                                                         ; 71      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltSel_n                                                          ; 72      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltWr_n                                                           ; 40      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[2]                                                         ; 70      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[1]                                                         ; 69      ;
+; Rule T101: Nodes with more than the specified number of fan-outs     ; pSltAdr[0]                                                         ; 66      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[11]                                                        ; 72      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[12]                                                        ; 72      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[8]                                                         ; 72      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[10]                                                        ; 72      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[13]                                                        ; 72      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[7]                                                         ; 72      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltSel_n                                                          ; 72      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[9]                                                         ; 72      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[4]                                                         ; 71      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[6]                                                         ; 71      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[5]                                                         ; 71      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[3]                                                         ; 71      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[2]                                                         ; 70      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[1]                                                         ; 69      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltAdr[0]                                                         ; 66      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltWr_n                                                           ; 40      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltRst_n                                                          ; 38      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]  ; 31      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltRd_n                                                           ; 30      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]  ; 30      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltClc                                                            ; 29      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]  ; 29      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]  ; 28      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rsttx~30bal                                          ; 27      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|txmit:UART_TX|clk1x_enable                           ; 25      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[6]        ; 23      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0] ; 22      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1] ; 21      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2] ; 20      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pCrtClc                                                            ; 20      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[3] ; 19      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6]       ; 15      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rcvr:UART_RX|clk1x_enable                            ; 14      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rcvr:UART_RX|dr                                      ; 13      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|TxIE                                                 ; 11      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltIorq_n                                                         ; 11      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|RxIE                                                 ; 11      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rcvr:UART_RX|process_2~13                            ; 11      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; pSltM1_n                                                           ; 11      ;
+; Rule T102: Top nodes with the highest number of fan-outs (tri-state) ; pSltDat[7]~0                                                       ; 10      ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rstrx~22                                             ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|pSltDat[7]~225                                       ; 8       ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|RxEN                                                 ; 8       ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[0]       ; 7       ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[0]        ; 7       ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rstrx~40                                             ; 7       ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[1]       ; 6       ;
+; Rule T102: Top nodes with the highest number of fan-outs (tri-state) ; pSltDat[4]~3                                                       ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs             ; YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[1]        ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs (tri-state) ; pSltDat[2]~5                                                       ; 5       ;
++----------------------------------------------------------------------+--------------------------------------------------------------------+---------+
+
+
++---------------------------+
+; Design Assistant Messages ;
++---------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Design Assistant
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Sun Mar 12 20:10:08 2017
+Info: Command: quartus_drc --read_settings_files=on --write_settings_files=off SFG05S -c SFG05S
+Critical Warning: (Critical) Rule C101: Gated clock should be implemented according to the Altera standard scheme. Found 5 node(s) related to this rule.
+    Critical Warning: Node  "YM2148:C_2148|wrn~19"
+    Critical Warning: Node  "YM2148:C_2148|wrn~27"
+    Critical Warning: Node  "YM2148:C_2148|wrn~28"
+    Critical Warning: Node  "YM2148:C_2148|wrn~29"
+    Critical Warning: Node  "TWait"
+Critical Warning: (High) Rule R101: Combinational logic used as a reset signal should be synchronized. Found 10 node(s) related to this rule.
+    Critical Warning: Node  "YM2148:C_2148|rstrx~41"
+    Critical Warning: Node  "YM2148:C_2148|rcvr:UART_RX|process_2~13"
+    Critical Warning: Node  "YM2148:C_2148|rstrx~22"
+    Critical Warning: Node  "YM2148:C_2148|rsttx~30bal"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|process_5~4"
+    Critical Warning: Node  "YM2148:C_2148|rstrx~40"
+    Critical Warning: Node  "YM2148:C_2148|rcvr:UART_RX|process_5~2"
+    Critical Warning: Node  "YM2148:C_2148|rstrx~42"
+    Critical Warning: Node  "YM2148:C_2148|rcvr:UART_RX|process_1~5"
+    Critical Warning: Node  "YM2148:C_2148|rcvr:UART_RX|rste~1"
+Critical Warning: (High) Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source. Found 2 node(s) related to this rule.
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|wrn1"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[0]"
+Critical Warning: (High) Rule S104: Clock port and any other signal port of same register should not be driven by the same signal source. Found 8 node(s) related to this rule.
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[7]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[6]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[5]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[0]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[4]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[1]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[2]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[3]"
+Critical Warning: (High) Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains. Found 8 asynchronous clock domain interface structure(s) related to this rule.
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[7]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[6]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[5]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[0]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[4]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[1]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[2]"
+    Critical Warning: Node  "YM2148:C_2148|txmit:UART_TX|tbr[3]"
+Warning: (Medium) Rule C103: Gated clock is not feeding at least a pre-defined number of clock port to effectively save power. (Value defined:30). Found 5 node(s) related to this rule.
+    Warning: Node  "YM2148:C_2148|wrn~19"
+    Warning: Node  "YM2148:C_2148|wrn~27"
+    Warning: Node  "YM2148:C_2148|wrn~28"
+    Warning: Node  "YM2148:C_2148|wrn~29"
+    Warning: Node  "TWait"
+Warning: (Medium) Rule C104: Clock signal source should drive only input clock ports. Found 3 nodes related to this rule.
+    Warning: Node  "YM2148:C_2148|rcvr:UART_RX|clk1x_enable"
+    Warning: Node  "YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[6]"
+    Warning: Node  "YM2148:C_2148|txmit:UART_TX|lpm_counter:clkdiv_rtl_1|dffs[6]"
+Warning: (Medium) Rule R102: External reset should be synchronized using two cascaded registers. Found 1 node(s) related to this rule.
+    Warning: Node  "pSltRst_n"
+Warning: (Medium) Rule R105: The reset signal that is generated in one clock domain and is used in the other clock domain, should be synchronized. Found 1 node(s) related to this rule.
+    Warning: Node  "rstTWait"
+Info: (Information) Rule T101: Nodes with more than the specified number of fan-outs. (Value defined:30). Found 18 node(s) with highest fan-out.
+    Info: Node  "pSltRst_n"
+    Info: Node  "YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]"
+    Info: Node  "pSltAdr[13]"
+    Info: Node  "pSltAdr[12]"
+    Info: Node  "pSltAdr[11]"
+    Info: Node  "pSltAdr[10]"
+    Info: Node  "pSltAdr[9]"
+    Info: Node  "pSltAdr[8]"
+    Info: Node  "pSltAdr[7]"
+    Info: Node  "pSltAdr[6]"
+    Info: Node  "pSltAdr[5]"
+    Info: Node  "pSltAdr[4]"
+    Info: Node  "pSltAdr[3]"
+    Info: Node  "pSltSel_n"
+    Info: Node  "pSltWr_n"
+    Info: Node  "pSltAdr[2]"
+    Info: Node  "pSltAdr[1]"
+    Info: Node  "pSltAdr[0]"
+Info: (Information) Rule T102: Top nodes with the highest number of fan-outs. (Value defined:50). Found 50 node(s) with highest fan-out.
+    Info: Node  "pSltAdr[11]"
+    Info: Node  "pSltAdr[12]"
+    Info: Node  "pSltAdr[8]"
+    Info: Node  "pSltAdr[10]"
+    Info: Node  "pSltAdr[13]"
+    Info: Node  "pSltAdr[7]"
+    Info: Node  "pSltSel_n"
+    Info: Node  "pSltAdr[9]"
+    Info: Node  "pSltAdr[4]"
+    Info: Node  "pSltAdr[6]"
+    Info: Node  "pSltAdr[5]"
+    Info: Node  "pSltAdr[3]"
+    Info: Node  "pSltAdr[2]"
+    Info: Node  "pSltAdr[1]"
+    Info: Node  "pSltAdr[0]"
+    Info: Node  "pSltWr_n"
+    Info: Node  "pSltRst_n"
+    Info: Node  "YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[0]"
+    Info: Node  "pSltRd_n"
+    Info: Node  "YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[1]"
+    Info: Node  "pSltClc"
+    Info: Node  "YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[2]"
+    Info: Node  "YM2148:C_2148|rcvr:UART_RX|lpm_counter:no_bits_rcvd_rtl_3|dffs[3]"
+    Info: Node  "YM2148:C_2148|rsttx~30bal"
+    Info: Node  "YM2148:C_2148|txmit:UART_TX|clk1x_enable"
+    Info: Node  "YM2148:C_2148|rcvr:UART_RX|lpm_counter:clkdiv_rtl_2|dffs[6]"
+    Info: Node  "YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[0]"
+    Info: Node  "YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[1]"
+    Info: Node  "YM2148:C_2148|txmit:UART_TX|lpm_counter:no_bits_sent_rtl_0|dffs[2]"
+    Info: Node  "pCrtClc"
+    Info: Truncated list of Design Assistant messages to 30 messages. Go to sections under Design Assistant section of Compilation Report for complete lists of Design Assistant messages generated.
+Info: Design Assistant information: finished post-fitting analysis of current design -- generated 68 information messages and 43 warning messages
+Info: Quartus II Design Assistant was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 166 megabytes
+    Info: Processing ended: Sun Mar 12 20:10:09 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
