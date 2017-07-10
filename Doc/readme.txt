@@ -1,4 +1,4 @@
-Yamaha SFG 05/01-S Cartridge Board v1.0
+Yamaha SFG 05/01-S Cartridge Board v1.2
 Copyright (c) 2017 RBSC
 
 The Setup
@@ -53,7 +53,9 @@ Notes
 -----
 
 If you are using 74HCT04 chip instead of 74LS04 please make sure you add one additional 47pf capacitor. See the 74HCT04_fix_cart.jpg
-image for capacitor mounting instructions.
+image for capacitor mounting instructions. This picture shows the placing of an additional capacitor on the board version 1.0. Later
+versions of the board have the dedicated place for this capacitor (C50).
+
 
 
 IMPORTANT!

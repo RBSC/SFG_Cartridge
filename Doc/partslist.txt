@@ -1,19 +1,21 @@
-SFG 05/01-S OPM Cartridge Partslist
+SFG 05/01-S OPM Cartridge Version 1.2
 Copyright (C) 2017 RBSC
 Original SFG design by Yamaha Corp.
--------------------------------------
 
-Count  ComponentName   RefDes          PatternName     Value          
------- --------------- --------------- --------------- ---------------
+Partslist
+---------
 
-     3 1N4148S         D1              SOD80PD                        
+Count  ComponentName   RefDes          PatternName     Value           Notes
+------ --------------- --------------- --------------- --------------- ---------------
+
+     3 1N4148S         D1              SOD80PD                         SMD diode
                        D2                                                                             
                        D3                                                                             
-     3 4558D           AU1             SOP8                           
+     3 4558D           AU1             SOP8                            Amplifier
                        AU2                                                                            
                        AU3                                                                            
-     1 C_0603          C20             C0603_132A      0.027          
-    11 C_0603          C1              C0603_132A      0.1            
+     1 C_0603          C20             C0603_132A      0.027           
+    11 C_0603          C1              C0603_132A      0.1             
                        C2                                                                             
                        C4                                                                             
                        C5                                                                             
@@ -24,11 +26,12 @@ Count  ComponentName   RefDes          PatternName     Value
                        C30                                                                            
                        C32                                                                            
                        C33                                                                            
-     2 C_0603          C25             C0603_132A      1n             
+     2 C_0603          C25             C0603_132A      1n              
                        C27                                                                            
-     2 C_0603          C21             C0603_132A      1n8            
+     2 C_0603          C21             C0603_132A      1n8             
                        C23                                                                            
-    17 C_0603          C31             C0603_132A      100p           
+     1 C_0603          C50             C0603_132A      47pF             Only for 74HCT04 option!
+    17 C_0603          C31             C0603_132A      100pF            
                        C34                                                                            
                        C35                                                                            
                        C36                                                                            
@@ -45,51 +48,48 @@ Count  ComponentName   RefDes          PatternName     Value
                        C47                                                                            
                        C48                                                                            
                        C49                                                                            
-     2 C_0603          C14             C0603_132A      390p           
+     2 C_0603          C14             C0603_132A      390pF            
                        C15                                                                            
-     6 C_1206          C16             C1206_134A      4.7mk 25v      
+     6 C_1206          C16             C1206_134A      4.7uF 25v       
                        C17                                                                            
                        C18                                                                            
                        C19                                                                            
                        C22                                                                            
                        C24                                                                            
-     1 C_1812          C12             C1812_136A      10mk 6.3v      
-     1 C_1812          C26             C1812_136A      10mk 16v       
-     2 C_1812          C3              C1812_136A      47mk 16v       
+     1 C_1812          C12             C1812_136A      10uF 6.3v       
+     1 C_1812          C26             C1812_136A      10uF 16v        
+     2 C_1812          C3              C1812_136A      47uF 16v        
                        C28                                                                            
-     1 C_1812          C13             C1812_136A      47mk  6.3v     
-     3 C_1812          C10             C1812_136A      100mk 16v      
-                       C11                                                                            
-                       L3                                                                             
-     1 C_1812          L1              C1812_136A      820 uH         
-     2 C_1812          L2              C1812_136A                     
-                       L6                                                                             
-     1 EDGE50/MSX      X1              EDGE50/100_350                 
-     1 EPM7160STC100-1 IC103           TQFP100                        
-       0                                                                                              
-     1 IDC2X20M        CN4             IDC40M                         
-     1 IDC10M          CN3             IDC10M                         
-     1 M27C256B-10C1   IC104           PLCC32                         
-     6 R_0603          R26             R0603_101A      1k             
+     1 C_1812          C13             C1812_136A      47uF 6.3v      
+     1 C_1812          L1              C1812_136A      820 uH          Power filter, must-have
+     4 C_1812          L2              C1812_136A                      Optional ferrite bead
+                       L3                                              Optional ferrite bead
+                       L4                                              Optional ferrite bead
+                       L5                                              Optional ferrite bead
+     1 EPM7160STC100-1 IC103           TQFP100                         Altera MAX
+     1 IDC2X20M        CN4             IDC40M                          Angled male IDE connector
+     1 IDC10M          CN3             IDC10M                          JTAG connector
+     1 M27C512         IC104           PLCC32                          EPROM/EEPROM, also 27C256 possible
+     6 R_0603          R26             R0603_101A      1k              
                        R27                                                                            
                        R49                                                                            
                        R50                                                                            
                        R51                                                                            
                        R52                                                                            
-     1 R_0603          R18             R0603_101A      1k8            
-     1 R_0603          R8              R0603_101A      1M             
-     2 R_0603          R22             R0603_101A      1.8k           
+     1 R_0603          R18             R0603_101A      1k8             
+     1 R_0603          R8              R0603_101A      1M              
+     2 R_0603          R22             R0603_101A      1.8k            
                        R24                                                                            
-     1 R_0603          R23             R0603_101A      2k2            
-     2 R_0603          R21             R0603_101A      2.2k           
+     1 R_0603          R23             R0603_101A      2k2             
+     2 R_0603          R21             R0603_101A      2.2k            
                        R25                                                                            
-     4 R_0603          R9              R0603_101A      4k7            
+     4 R_0603          R9              R0603_101A      4k7             
                        R12                                                                            
                        R14                                                                            
-                       R33                                                                            
-     2 R_0603          R10             R0603_101A      4.7k           
+                       R34                                                                            
+     2 R_0603          R10             R0603_101A      4.7k            
                        R11                                                                            
-    14 R_0603          R6              R0603_101A      10k            
+    14 R_0603          R6              R0603_101A      10k             
                        R7                                                                             
                        R13                                                                            
                        R15                                                                            
@@ -103,27 +103,29 @@ Count  ComponentName   RefDes          PatternName     Value
                        R46                                                                            
                        R47                                                                            
                        R48                                                                            
-     2 R_0603          R35             R0603_101A      22k            
+     2 R_0603          R35             R0603_101A      22k             
                        R36                                                                            
-     7 R_0603          R4              R0603_101A      220            
+     7 R_0603          R4              R0603_101A      220             
                        R5                                                                             
                        R17                                                                            
                        R19                                                                            
                        R30                                                                            
                        R32                                                                            
-                       R34                                                                            
-     1 R_0603          R31             R0603_101A      330            
-     1 R_0603          R37             R0603_101A      390            
-     2 R_0603          R16             R0603_101A      560            
+                       R33                                                                            
+     1 R_0603          R31             R0603_101A      330             
+     1 R_0603          R37             R0603_101A      390             
+     2 R_0603          R16             R0603_101A      560             
                        R20                                                                            
-     1 SN74ALS04BD     IC108           D014                           
-     1 SOT-23(A1A2K)   TR103           SOT-23(A1A2K)   2SA733         
-     5 SOT-23(A1A2K)   TR101           SOT-23(A1A2K)   2SC945         
+     1 SN74ALS04BD     IC108           D014                            SMD chip. See readme for 74HCT04 option
+     1 SOT-23(A1A2K)   TR103           SOT-23(A1A2K)   2SA733          
+     5 SOT-23(A1A2K)   TR101           SOT-23(A1A2K)   2SC945          
                        TR102                                                                          
                        TR104                                                                          
                        TR105                                                                          
                        TR106                                                                          
-     1 ST-222          AX1             ST-222          {Value}        
-     1 TLP552          IC109           TLP552                         
-     1 YM2151          IC101           YM2151                         
-     1 YM3012          IC102           YM3012                         
+     1 ST-222          AX1             ST-222                          Audio socket
+     2 TANTAL-C        C10             C-TANTAL-C      100uF 16v
+                       C11                                                                            
+     1 TLP552          IC109           TLP552                          DIP casing
+     1 YM2151          IC101           YM2151                          DIP casing
+     1 YM3012          IC102           YM3012                          DIP casing

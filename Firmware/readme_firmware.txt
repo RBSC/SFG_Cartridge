@@ -1,4 +1,4 @@
-Yamaha SFG 05/01-S Cartridge Board v1.0
+Yamaha SFG 05/01-S Cartridge Board v1.2
 Copyright (c) 2017 RBSC
 
 The Altera firmware was created by RBSC. Commercial usage is not allowed!
