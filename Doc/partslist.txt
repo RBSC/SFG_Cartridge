@@ -2,6 +2,13 @@ SFG 05/01-S OPM Cartridge Version 1.2
 Copyright (C) 2017 RBSC
 Original SFG design by Yamaha Corp.
 
+
+IMPORTANT!
+On the board version 1.0 (on this board the version number may be missing) the R34 and R33 resistors' numbers
+are swapped. So the 220 Ohm resistor should be must on the pads marked as R34 and the 4.7 kOhm resistor must
+be soldered on the pads marked as R33.
+
+
 Partslist
 ---------
 

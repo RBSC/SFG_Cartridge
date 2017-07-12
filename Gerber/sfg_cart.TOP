@@ -1,6 +1,6 @@
 G04*
-G04  File:            CSFG016.TOP, Sun May 28 20:24:43 2017*
-G04  Source:          P-CAD 2006 PCB, Version 19.02.958, (F:\Platform\MSX\Projects\My\SFG-05\50_pin_version\CSFG016.pcb)*
+G04  File:            SFG_CART.TOP, Thu Jul 13 01:06:16 2017*
+G04  Source:          P-CAD 2006 PCB, Version 19.02.958, (F:\Platform\MSX\Projects\My\SFG-05\50_pin_version\sfg_cart.pcb)*
 G04  Format:          Gerber Format (RS-274-D), ASCII*
 G04*
 G04  Format Options:  Absolute Positioning*
@@ -24,7 +24,7 @@ G04                   No Values*
 G04                   No Drill Symbols*
 G04                   Top*
 G04*
-%INCSFG016.TOP*%
+%INSFG_CART.TOP*%
 %ICAS*%
 %MOIN*%
 G04*
@@ -3264,15 +3264,15 @@ X238062Y279625D3*
 D57*
 X237630Y280365D3*
 Y281034D3*
-D51*
-X238380Y281275D3*
-X239250Y281675D3*
-Y280875D3*
 D76*
 X238000Y281562D3*
 D56*
 X239250Y280187D3*
 X238580D3*
+D51*
+X238380Y281275D3*
+X239250Y281675D3*
+Y280875D3*
 D76*
 X241625Y268125D3*
 D77*

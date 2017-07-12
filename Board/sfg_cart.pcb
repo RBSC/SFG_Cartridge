@@ -1,8 +1,8 @@
-ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
+ACCEL_ASCII "F:\Platform\MSX\Projects\My\SFG-05\50_pin_version\sfg_cart.pcb"
 
 (asciiHeader 
   (asciiVersion 3 0)
-  (timeStamp 2017 6 26 21 22 42)
+  (timeStamp 2017 7 13 1 8 34)
   (program "P-CAD 2006 PCB" "19.02.9589")
   (copyright "Copyright © 1991-2006 Altium Limited")
   (fileAuthor "")
@@ -10335,8 +10335,8 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
     (units in)
     (numFormat gbr44)
     (autoDrawApertureSize 10.0)
-    (outputPath "C:\\Users\\pashaz\\Documents\\My Documents\\MSX")
-    (viewLog True)
+    (outputPath "gerber")
+    (viewLog False)
     (autoClear True)
     (g54Option False)
     (useArcs False)
@@ -10365,6 +10365,15 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
     (apertureDef 
       (dCode 12)
       (apertureShape Ellipse)
+      (width 0.4 mm)
+      (height 0.4 mm)
+      (holeDiam 0.0)
+      (desc "Ellipse X15.7mil Y15.7mil H0.0mil 0.0deg (0.0mil,0.0mil) Draw")
+      (apertureType draw)
+    )
+    (apertureDef 
+      (dCode 13)
+      (apertureShape Ellipse)
       (width 20.0)
       (height 20.0)
       (holeDiam 0.0)
@@ -10372,7 +10381,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 13)
+      (dCode 14)
       (apertureShape Ellipse)
       (width 25.0)
       (height 25.0)
@@ -10381,7 +10390,16 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 14)
+      (dCode 15)
+      (apertureShape Ellipse)
+      (width 0.1 mm)
+      (height 0.1 mm)
+      (holeDiam 0.0)
+      (desc "Ellipse X3.9mil Y3.9mil H0.0mil 0.0deg (0.0mil,0.0mil) Draw")
+      (apertureType draw)
+    )
+    (apertureDef 
+      (dCode 16)
       (apertureShape Ellipse)
       (width 30.0)
       (height 30.0)
@@ -10390,7 +10408,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 15)
+      (dCode 17)
       (apertureShape Ellipse)
       (width 40.0)
       (height 40.0)
@@ -10399,7 +10417,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 16)
+      (dCode 18)
       (apertureShape Ellipse)
       (width 5.0)
       (height 5.0)
@@ -10408,7 +10426,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 17)
+      (dCode 19)
       (apertureShape Ellipse)
       (width 50.0)
       (height 50.0)
@@ -10417,7 +10435,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 18)
+      (dCode 20)
       (apertureShape Ellipse)
       (width 0.154 mm)
       (height 0.154 mm)
@@ -10426,7 +10444,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 19)
+      (dCode 21)
       (apertureShape Ellipse)
       (width 60.0)
       (height 60.0)
@@ -10435,7 +10453,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 20)
+      (dCode 22)
       (apertureShape Ellipse)
       (width 0.2 mm)
       (height 0.2 mm)
@@ -10444,7 +10462,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 21)
+      (dCode 23)
       (apertureShape Ellipse)
       (width 70.0)
       (height 70.0)
@@ -10453,7 +10471,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 22)
+      (dCode 24)
       (apertureShape Ellipse)
       (width 1.9 mm)
       (height 1.9 mm)
@@ -10462,7 +10480,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 23)
+      (dCode 25)
       (apertureShape Ellipse)
       (width 80.0)
       (height 80.0)
@@ -10471,7 +10489,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 24)
+      (dCode 26)
       (apertureShape Ellipse)
       (width 9.1)
       (height 9.1)
@@ -10480,7 +10498,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 25)
+      (dCode 27)
       (apertureShape Ellipse)
       (width 0.24999 mm)
       (height 0.24999 mm)
@@ -10489,7 +10507,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (apertureType draw)
     )
     (apertureDef 
-      (dCode 26)
+      (dCode 28)
       (apertureShape Ellipse)
       (width 2.581 mm)
       (height 2.581 mm)
@@ -10497,7 +10515,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Ellipse X101.6mil Y101.6mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 27)
+      (dCode 29)
       (apertureShape Ellipse)
       (width 199.0)
       (height 199.0)
@@ -10505,7 +10523,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Ellipse X199.0mil Y199.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 28)
+      (dCode 30)
       (apertureShape Ellipse)
       (width 60.0)
       (height 60.0)
@@ -10513,7 +10531,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Ellipse X60.0mil Y60.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 29)
+      (dCode 31)
       (apertureShape Ellipse)
       (width 1.581 mm)
       (height 1.581 mm)
@@ -10521,7 +10539,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Ellipse X62.2mil Y62.2mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 30)
+      (dCode 32)
       (apertureShape Ellipse)
       (width 75.0)
       (height 75.0)
@@ -10529,7 +10547,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Ellipse X75.0mil Y75.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 31)
+      (dCode 33)
       (apertureShape Ellipse)
       (width 2.2 mm)
       (height 2.2 mm)
@@ -10537,7 +10555,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Ellipse X86.6mil Y86.6mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 32)
+      (dCode 34)
       (apertureShape MtHole)
       (width 184.0)
       (height 184.0)
@@ -10545,7 +10563,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Mounting Hole X184.0mil Y184.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 33)
+      (dCode 35)
       (apertureShape MtHole)
       (width 1.2 mm)
       (height 1.2 mm)
@@ -10553,7 +10571,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Mounting Hole X47.2mil Y47.2mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 34)
+      (dCode 36)
       (apertureShape Ellipse)
       (width 1.5 mm)
       (height 1.5 mm)
@@ -10561,7 +10579,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Ellipse X59.1mil Y59.1mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 35)
+      (dCode 37)
       (apertureShape Ellipse)
       (width 1.881 mm)
       (height 1.881 mm)
@@ -10569,7 +10587,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Ellipse X74.1mil Y74.1mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 36)
+      (dCode 38)
       (apertureShape RndRect)
       (width 50.0)
       (height 300.0)
@@ -10577,7 +10595,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rounded Rectangle X50.0mil Y300.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 37)
+      (dCode 39)
       (apertureShape RndRect)
       (width 50.0)
       (height 350.0)
@@ -10585,7 +10603,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rounded Rectangle X50.0mil Y350.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 38)
+      (dCode 40)
       (apertureShape RndRect)
       (width 65.0)
       (height 315.0)
@@ -10593,7 +10611,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rounded Rectangle X65.0mil Y315.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 39)
+      (dCode 41)
       (apertureShape RndRect)
       (width 65.0)
       (height 365.0)
@@ -10601,7 +10619,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rounded Rectangle X65.0mil Y365.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 40)
+      (dCode 42)
       (apertureShape Rect)
       (width 0.3 mm)
       (height 1.6 mm)
@@ -10609,7 +10627,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X11.8mil Y63.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 41)
+      (dCode 43)
       (apertureShape Rect)
       (width 1.6 mm)
       (height 0.3 mm)
@@ -10617,7 +10635,15 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X63.0mil Y11.8mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 42)
+      (dCode 44)
+      (apertureShape Rect)
+      (width 2.881 mm)
+      (height 2.881 mm)
+      (holeDiam 0.0)
+      (desc "Rectangle X113.4mil Y113.4mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
+    )
+    (apertureDef 
+      (dCode 45)
       (apertureShape Rect)
       (width 1.85001 mm)
       (height 0.6 mm)
@@ -10625,7 +10651,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X72.8mil Y23.6mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 43)
+      (dCode 46)
       (apertureShape Rect)
       (width 0.6 mm)
       (height 2.05001 mm)
@@ -10633,7 +10659,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X23.6mil Y80.7mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 44)
+      (dCode 47)
       (apertureShape Rect)
       (width 0.6 mm)
       (height 2.2 mm)
@@ -10641,7 +10667,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X23.6mil Y86.6mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 45)
+      (dCode 48)
       (apertureShape Rect)
       (width 2.2 mm)
       (height 0.6 mm)
@@ -10649,7 +10675,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X86.6mil Y23.6mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 46)
+      (dCode 49)
       (apertureShape Rect)
       (width 0.681 mm)
       (height 1.981 mm)
@@ -10657,7 +10683,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X26.8mil Y78.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 47)
+      (dCode 50)
       (apertureShape Rect)
       (width 1.981 mm)
       (height 0.681 mm)
@@ -10665,7 +10691,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X78.0mil Y26.8mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 48)
+      (dCode 51)
       (apertureShape Rect)
       (width 32.0)
       (height 32.0)
@@ -10673,7 +10699,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X32.0mil Y32.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 49)
+      (dCode 52)
       (apertureShape Rect)
       (width 0.981 mm)
       (height 2.581 mm)
@@ -10681,7 +10707,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X38.6mil Y101.6mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 50)
+      (dCode 53)
       (apertureShape Rect)
       (width 2.581 mm)
       (height 0.981 mm)
@@ -10689,7 +10715,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X101.6mil Y38.6mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 51)
+      (dCode 54)
       (apertureShape Rect)
       (width 2.23101 mm)
       (height 0.981 mm)
@@ -10697,7 +10723,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X87.8mil Y38.6mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 52)
+      (dCode 55)
       (apertureShape Rect)
       (width 0.981 mm)
       (height 2.43101 mm)
@@ -10705,7 +10731,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X38.6mil Y95.7mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 53)
+      (dCode 56)
       (apertureShape Rect)
       (width 1.1 mm)
       (height 1.0 mm)
@@ -10713,7 +10739,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X43.3mil Y39.4mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 54)
+      (dCode 57)
       (apertureShape Rect)
       (width 1.0 mm)
       (height 1.1 mm)
@@ -10721,7 +10747,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X39.4mil Y43.3mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 55)
+      (dCode 58)
       (apertureShape Rect)
       (width 47.0)
       (height 47.0)
@@ -10729,7 +10755,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X47.0mil Y47.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 56)
+      (dCode 59)
       (apertureShape Rect)
       (width 1.25 mm)
       (height 2.0 mm)
@@ -10737,7 +10763,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X49.2mil Y78.7mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 57)
+      (dCode 60)
       (apertureShape Rect)
       (width 2.0 mm)
       (height 1.25 mm)
@@ -10745,7 +10771,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X78.7mil Y49.2mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 58)
+      (dCode 61)
       (apertureShape Rect)
       (width 1.481 mm)
       (height 1.381 mm)
@@ -10753,7 +10779,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X58.3mil Y54.4mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 59)
+      (dCode 62)
       (apertureShape Rect)
       (width 1.381 mm)
       (height 1.481 mm)
@@ -10761,7 +10787,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X54.4mil Y58.3mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 60)
+      (dCode 63)
       (apertureShape Rect)
       (width 1.5 mm)
       (height 1.5 mm)
@@ -10769,7 +10795,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X59.1mil Y59.1mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 61)
+      (dCode 64)
       (apertureShape Rect)
       (width 60.0)
       (height 60.0)
@@ -10777,7 +10803,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X60.0mil Y60.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 62)
+      (dCode 65)
       (apertureShape Rect)
       (width 1.8 mm)
       (height 1.6 mm)
@@ -10785,7 +10811,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X70.9mil Y63.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 63)
+      (dCode 66)
       (apertureShape Rect)
       (width 1.631 mm)
       (height 2.381 mm)
@@ -10793,7 +10819,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X64.2mil Y93.7mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 64)
+      (dCode 67)
       (apertureShape Rect)
       (width 2.381 mm)
       (height 1.631 mm)
@@ -10801,7 +10827,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X93.7mil Y64.2mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 65)
+      (dCode 68)
       (apertureShape Rect)
       (width 1.881 mm)
       (height 1.881 mm)
@@ -10809,7 +10835,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X74.1mil Y74.1mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 66)
+      (dCode 69)
       (apertureShape Rect)
       (width 1.9 mm)
       (height 3.4 mm)
@@ -10817,7 +10843,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X74.8mil Y133.9mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 67)
+      (dCode 70)
       (apertureShape Rect)
       (width 3.4 mm)
       (height 1.9 mm)
@@ -10825,7 +10851,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X133.9mil Y74.8mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 68)
+      (dCode 71)
       (apertureShape Rect)
       (width 75.0)
       (height 75.0)
@@ -10833,7 +10859,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X75.0mil Y75.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 69)
+      (dCode 72)
       (apertureShape Rect)
       (width 2.181 mm)
       (height 1.981 mm)
@@ -10841,7 +10867,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X85.9mil Y78.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 70)
+      (dCode 73)
       (apertureShape Rect)
       (width 2.281 mm)
       (height 3.781 mm)
@@ -10849,7 +10875,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X89.8mil Y148.9mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 71)
+      (dCode 74)
       (apertureShape Rect)
       (width 3.781 mm)
       (height 2.281 mm)
@@ -10857,7 +10883,15 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Rectangle X148.9mil Y89.8mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 72)
+      (dCode 75)
+      (apertureShape Rect)
+      (width 2.5 mm)
+      (height 2.5 mm)
+      (holeDiam 0.0)
+      (desc "Rectangle X98.4mil Y98.4mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
+    )
+    (apertureDef 
+      (dCode 76)
       (apertureShape Ellipse)
       (width 34.0)
       (height 34.0)
@@ -10865,7 +10899,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Ellipse X34.0mil Y34.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 73)
+      (dCode 77)
       (apertureShape Ellipse)
       (width 40.0)
       (height 40.0)
@@ -10873,7 +10907,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Ellipse X40.0mil Y40.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 74)
+      (dCode 78)
       (apertureShape Ellipse)
       (width 49.0)
       (height 49.0)
@@ -10881,7 +10915,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (desc "Ellipse X49.0mil Y49.0mil H0.0mil 0.0deg (0.0mil,0.0mil) Flash")
     )
     (apertureDef 
-      (dCode 75)
+      (dCode 79)
       (apertureShape Ellipse)
       (width 55.0)
       (height 55.0)
@@ -10923,13 +10957,21 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
     (apertureAssn 
       (apertureRef (dCode 12))
       (itemMnemonic 
+        "LINE 15.7mil"
+        "LINE 0.40mm"
+        "LINE 40000app"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 13))
+      (itemMnemonic 
         "LINE 20.0mil"
         "LINE 0.51mm"
         "LINE 50800app"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 13))
+      (apertureRef (dCode 14))
       (itemMnemonic 
         "LINE 25.0mil"
         "LINE 0.64mm"
@@ -10937,7 +10979,15 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 14))
+      (apertureRef (dCode 15))
+      (itemMnemonic 
+        "LINE 3.9mil"
+        "LINE 0.10mm"
+        "LINE 10000app"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 16))
       (itemMnemonic 
         "LINE 30.0mil"
         "LINE 0.76mm"
@@ -10945,7 +10995,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 15))
+      (apertureRef (dCode 17))
       (itemMnemonic 
         "LINE 40.0mil"
         "LINE 1.02mm"
@@ -10953,7 +11003,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 16))
+      (apertureRef (dCode 18))
       (itemMnemonic 
         "LINE 5.0mil"
         "LINE 0.13mm"
@@ -10961,7 +11011,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 17))
+      (apertureRef (dCode 19))
       (itemMnemonic 
         "LINE 50.0mil"
         "LINE 1.27mm"
@@ -10969,7 +11019,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 18))
+      (apertureRef (dCode 20))
       (itemMnemonic 
         "LINE 6.1mil"
         "LINE 0.15mm"
@@ -10977,7 +11027,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 19))
+      (apertureRef (dCode 21))
       (itemMnemonic 
         "LINE 60.0mil"
         "LINE 1.52mm"
@@ -10985,7 +11035,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 20))
+      (apertureRef (dCode 22))
       (itemMnemonic 
         "LINE 7.9mil"
         "LINE 0.20mm"
@@ -10993,7 +11043,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 21))
+      (apertureRef (dCode 23))
       (itemMnemonic 
         "LINE 70.0mil"
         "LINE 1.78mm"
@@ -11001,7 +11051,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 22))
+      (apertureRef (dCode 24))
       (itemMnemonic 
         "LINE 74.8mil"
         "LINE 1.90mm"
@@ -11009,7 +11059,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 23))
+      (apertureRef (dCode 25))
       (itemMnemonic 
         "LINE 80.0mil"
         "LINE 2.03mm"
@@ -11017,7 +11067,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 24))
+      (apertureRef (dCode 26))
       (itemMnemonic 
         "LINE 9.1mil"
         "LINE 0.23mm"
@@ -11025,7 +11075,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 25))
+      (apertureRef (dCode 27))
       (itemMnemonic 
         "LINE 9.8mil"
         "LINE 0.25mm"
@@ -11033,7 +11083,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 26))
+      (apertureRef (dCode 28))
       (itemMnemonic 
         "PAD EL 101.6mil 101.6mil 59.1mil 0.0deg (0.0mil,0.0mil)"
         "PAD EL 2.58mm 2.58mm 1.50mm 0.0deg (0.00mm,0.00mm)"
@@ -11041,7 +11091,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 27))
+      (apertureRef (dCode 29))
       (itemMnemonic 
         "PAD EL 199.0mil 199.0mil 183.7mil 0.0deg (0.0mil,0.0mil)"
         "PAD EL 5.05mm 5.05mm 4.67mm 0.0deg (0.00mm,0.00mm)"
@@ -11049,7 +11099,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 28))
+      (apertureRef (dCode 30))
       (itemMnemonic 
         "PAD EL 60.0mil 60.0mil 38.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD EL 1.52mm 1.52mm 0.97mm 0.0deg (0.00mm,0.00mm)"
@@ -11057,7 +11107,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 28))
+      (apertureRef (dCode 30))
       (itemMnemonic 
         "PAD EL 60.0mil 60.0mil 38.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD EL 1.52mm 1.52mm 0.97mm 180.0deg (0.00mm,0.00mm)"
@@ -11065,7 +11115,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 29))
+      (apertureRef (dCode 31))
       (itemMnemonic 
         "PAD EL 62.2mil 62.2mil 47.2mil 0.0deg (0.0mil,0.0mil)"
         "PAD EL 1.58mm 1.58mm 1.20mm 0.0deg (0.00mm,0.00mm)"
@@ -11073,7 +11123,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 30))
+      (apertureRef (dCode 32))
       (itemMnemonic 
         "PAD EL 75.0mil 75.0mil 38.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD EL 1.91mm 1.91mm 0.97mm 0.0deg (0.00mm,0.00mm)"
@@ -11081,7 +11131,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 30))
+      (apertureRef (dCode 32))
       (itemMnemonic 
         "PAD EL 75.0mil 75.0mil 38.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD EL 1.91mm 1.91mm 0.97mm 180.0deg (0.00mm,0.00mm)"
@@ -11089,7 +11139,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 31))
+      (apertureRef (dCode 33))
       (itemMnemonic 
         "PAD EL 86.6mil 86.6mil 59.1mil 0.0deg (0.0mil,0.0mil)"
         "PAD EL 2.20mm 2.20mm 1.50mm 0.0deg (0.00mm,0.00mm)"
@@ -11097,7 +11147,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 32))
+      (apertureRef (dCode 34))
       (itemMnemonic 
         "PAD MH 184.0mil 184.0mil 183.7mil 0.0deg (0.0mil,0.0mil)"
         "PAD MH 4.67mm 4.67mm 4.67mm 0.0deg (0.00mm,0.00mm)"
@@ -11105,7 +11155,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 33))
+      (apertureRef (dCode 35))
       (itemMnemonic 
         "PAD MH 47.2mil 47.2mil 47.2mil 0.0deg (0.0mil,0.0mil)"
         "PAD MH 1.20mm 1.20mm 1.20mm 0.0deg (0.00mm,0.00mm)"
@@ -11113,7 +11163,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 34))
+      (apertureRef (dCode 36))
       (itemMnemonic 
         "PAD OV 59.1mil 59.1mil 35.4mil 180.0deg (0.0mil,0.0mil)"
         "PAD OV 1.50mm 1.50mm 0.90mm 180.0deg (0.00mm,0.00mm)"
@@ -11121,7 +11171,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 34))
+      (apertureRef (dCode 36))
       (itemMnemonic 
         "PAD OV 59.1mil 59.1mil 35.4mil 270.0deg (0.0mil,0.0mil)"
         "PAD OV 1.50mm 1.50mm 0.90mm 270.0deg (0.00mm,0.00mm)"
@@ -11129,7 +11179,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 35))
+      (apertureRef (dCode 37))
       (itemMnemonic 
         "PAD OV 74.1mil 74.1mil 35.4mil 180.0deg (0.0mil,0.0mil)"
         "PAD OV 1.88mm 1.88mm 0.90mm 180.0deg (0.00mm,0.00mm)"
@@ -11137,7 +11187,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 35))
+      (apertureRef (dCode 37))
       (itemMnemonic 
         "PAD OV 74.1mil 74.1mil 35.4mil 270.0deg (0.0mil,0.0mil)"
         "PAD OV 1.88mm 1.88mm 0.90mm 270.0deg (0.00mm,0.00mm)"
@@ -11145,7 +11195,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 36))
+      (apertureRef (dCode 38))
       (itemMnemonic 
         "PAD RR 50.0mil 300.0mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD RR 1.27mm 7.62mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11153,7 +11203,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 37))
+      (apertureRef (dCode 39))
       (itemMnemonic 
         "PAD RR 50.0mil 350.0mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD RR 1.27mm 8.89mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11161,7 +11211,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 38))
+      (apertureRef (dCode 40))
       (itemMnemonic 
         "PAD RR 65.0mil 315.0mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD RR 1.65mm 8.00mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11169,7 +11219,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 39))
+      (apertureRef (dCode 41))
       (itemMnemonic 
         "PAD RR 65.0mil 365.0mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD RR 1.65mm 9.27mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11177,7 +11227,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 40))
+      (apertureRef (dCode 42))
       (itemMnemonic 
         "PAD SQ 11.8mil 63.0mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.30mm 1.60mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11185,7 +11235,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 41))
+      (apertureRef (dCode 43))
       (itemMnemonic 
         "PAD SQ 11.8mil 63.0mil 0.0mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.30mm 1.60mm 0.00mm 270.0deg (0.00mm,0.00mm)"
@@ -11193,7 +11243,23 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 42))
+      (apertureRef (dCode 44))
+      (itemMnemonic 
+        "PAD SQ 113.4mil 113.4mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 2.88mm 2.88mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 288100app 288100app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 44))
+      (itemMnemonic 
+        "PAD SQ 113.4mil 113.4mil 0.0mil 180.0deg (0.0mil,0.0mil)"
+        "PAD SQ 2.88mm 2.88mm 0.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD SQ 288100app 288100app 0app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 45))
       (itemMnemonic 
         "PAD SQ 23.6mil 72.8mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.60mm 1.85mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11201,7 +11267,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 43))
+      (apertureRef (dCode 46))
       (itemMnemonic 
         "PAD SQ 23.6mil 80.7mil 0.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.60mm 2.05mm 0.00mm 180.0deg (0.00mm,0.00mm)"
@@ -11209,7 +11275,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 44))
+      (apertureRef (dCode 47))
       (itemMnemonic 
         "PAD SQ 23.6mil 86.6mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.60mm 2.20mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11217,7 +11283,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 45))
+      (apertureRef (dCode 48))
       (itemMnemonic 
         "PAD SQ 23.6mil 86.6mil 0.0mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.60mm 2.20mm 0.00mm 270.0deg (0.00mm,0.00mm)"
@@ -11225,7 +11291,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 46))
+      (apertureRef (dCode 49))
       (itemMnemonic 
         "PAD SQ 26.8mil 78.0mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.68mm 1.98mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11233,7 +11299,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 47))
+      (apertureRef (dCode 50))
       (itemMnemonic 
         "PAD SQ 26.8mil 78.0mil 0.0mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.68mm 1.98mm 0.00mm 270.0deg (0.00mm,0.00mm)"
@@ -11241,7 +11307,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 48))
+      (apertureRef (dCode 51))
       (itemMnemonic 
         "PAD SQ 32.0mil 32.0mil 0.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.81mm 0.81mm 0.00mm 180.0deg (0.00mm,0.00mm)"
@@ -11249,7 +11315,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 48))
+      (apertureRef (dCode 51))
       (itemMnemonic 
         "PAD SQ 32.0mil 32.0mil 0.0mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.81mm 0.81mm 0.00mm 270.0deg (0.00mm,0.00mm)"
@@ -11257,7 +11323,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 48))
+      (apertureRef (dCode 51))
       (itemMnemonic 
         "PAD SQ 32.0mil 32.0mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.81mm 0.81mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11265,7 +11331,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 49))
+      (apertureRef (dCode 52))
       (itemMnemonic 
         "PAD SQ 38.6mil 101.6mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.98mm 2.58mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11273,7 +11339,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 50))
+      (apertureRef (dCode 53))
       (itemMnemonic 
         "PAD SQ 38.6mil 101.6mil 0.0mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.98mm 2.58mm 0.00mm 270.0deg (0.00mm,0.00mm)"
@@ -11281,7 +11347,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 51))
+      (apertureRef (dCode 54))
       (itemMnemonic 
         "PAD SQ 38.6mil 87.8mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.98mm 2.23mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11289,7 +11355,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 52))
+      (apertureRef (dCode 55))
       (itemMnemonic 
         "PAD SQ 38.6mil 95.7mil 0.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 0.98mm 2.43mm 0.00mm 180.0deg (0.00mm,0.00mm)"
@@ -11297,7 +11363,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 53))
+      (apertureRef (dCode 56))
       (itemMnemonic 
         "PAD SQ 43.3mil 39.4mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.10mm 1.00mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11305,7 +11371,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 53))
+      (apertureRef (dCode 56))
       (itemMnemonic 
         "PAD SQ 43.3mil 39.4mil 0.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.10mm 1.00mm 0.00mm 180.0deg (0.00mm,0.00mm)"
@@ -11313,7 +11379,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 54))
+      (apertureRef (dCode 57))
       (itemMnemonic 
         "PAD SQ 43.3mil 39.4mil 0.0mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.10mm 1.00mm 0.00mm 270.0deg (0.00mm,0.00mm)"
@@ -11321,7 +11387,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 54))
+      (apertureRef (dCode 57))
       (itemMnemonic 
         "PAD SQ 43.3mil 39.4mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.10mm 1.00mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11329,7 +11395,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 55))
+      (apertureRef (dCode 58))
       (itemMnemonic 
         "PAD SQ 47.0mil 47.0mil 0.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.19mm 1.19mm 0.00mm 180.0deg (0.00mm,0.00mm)"
@@ -11337,7 +11403,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 55))
+      (apertureRef (dCode 58))
       (itemMnemonic 
         "PAD SQ 47.0mil 47.0mil 0.0mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.19mm 1.19mm 0.00mm 270.0deg (0.00mm,0.00mm)"
@@ -11345,7 +11411,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 55))
+      (apertureRef (dCode 58))
       (itemMnemonic 
         "PAD SQ 47.0mil 47.0mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.19mm 1.19mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11353,7 +11419,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 56))
+      (apertureRef (dCode 59))
       (itemMnemonic 
         "PAD SQ 49.2mil 78.7mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.25mm 2.00mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11361,7 +11427,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 56))
+      (apertureRef (dCode 59))
       (itemMnemonic 
         "PAD SQ 49.2mil 78.7mil 0.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.25mm 2.00mm 0.00mm 180.0deg (0.00mm,0.00mm)"
@@ -11369,7 +11435,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 57))
+      (apertureRef (dCode 60))
       (itemMnemonic 
         "PAD SQ 49.2mil 78.7mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.25mm 2.00mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11377,7 +11443,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 58))
+      (apertureRef (dCode 61))
       (itemMnemonic 
         "PAD SQ 58.3mil 54.4mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.48mm 1.38mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11385,7 +11451,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 58))
+      (apertureRef (dCode 61))
       (itemMnemonic 
         "PAD SQ 58.3mil 54.4mil 0.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.48mm 1.38mm 0.00mm 180.0deg (0.00mm,0.00mm)"
@@ -11393,7 +11459,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 59))
+      (apertureRef (dCode 62))
       (itemMnemonic 
         "PAD SQ 58.3mil 54.4mil 0.0mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.48mm 1.38mm 0.00mm 270.0deg (0.00mm,0.00mm)"
@@ -11401,7 +11467,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 59))
+      (apertureRef (dCode 62))
       (itemMnemonic 
         "PAD SQ 58.3mil 54.4mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.48mm 1.38mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11409,7 +11475,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 60))
+      (apertureRef (dCode 63))
       (itemMnemonic 
         "PAD SQ 59.1mil 59.1mil 35.4mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.50mm 1.50mm 0.90mm 180.0deg (0.00mm,0.00mm)"
@@ -11417,7 +11483,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 60))
+      (apertureRef (dCode 63))
       (itemMnemonic 
         "PAD SQ 59.1mil 59.1mil 35.4mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.50mm 1.50mm 0.90mm 270.0deg (0.00mm,0.00mm)"
@@ -11425,7 +11491,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 61))
+      (apertureRef (dCode 64))
       (itemMnemonic 
         "PAD SQ 60.0mil 60.0mil 38.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.52mm 1.52mm 0.97mm 180.0deg (0.00mm,0.00mm)"
@@ -11433,7 +11499,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 62))
+      (apertureRef (dCode 65))
       (itemMnemonic 
         "PAD SQ 63.0mil 70.9mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.60mm 1.80mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11441,7 +11507,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 63))
+      (apertureRef (dCode 66))
       (itemMnemonic 
         "PAD SQ 64.2mil 93.7mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.63mm 2.38mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11449,7 +11515,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 63))
+      (apertureRef (dCode 66))
       (itemMnemonic 
         "PAD SQ 64.2mil 93.7mil 0.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.63mm 2.38mm 0.00mm 180.0deg (0.00mm,0.00mm)"
@@ -11457,7 +11523,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 64))
+      (apertureRef (dCode 67))
       (itemMnemonic 
         "PAD SQ 64.2mil 93.7mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.63mm 2.38mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11465,7 +11531,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 65))
+      (apertureRef (dCode 68))
       (itemMnemonic 
         "PAD SQ 74.1mil 74.1mil 35.4mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.88mm 1.88mm 0.90mm 180.0deg (0.00mm,0.00mm)"
@@ -11473,7 +11539,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 65))
+      (apertureRef (dCode 68))
       (itemMnemonic 
         "PAD SQ 74.1mil 74.1mil 35.4mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.88mm 1.88mm 0.90mm 270.0deg (0.00mm,0.00mm)"
@@ -11481,7 +11547,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 66))
+      (apertureRef (dCode 69))
       (itemMnemonic 
         "PAD SQ 74.8mil 133.9mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.90mm 3.40mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11489,7 +11555,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 66))
+      (apertureRef (dCode 69))
       (itemMnemonic 
         "PAD SQ 74.8mil 133.9mil 0.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.90mm 3.40mm 0.00mm 180.0deg (0.00mm,0.00mm)"
@@ -11497,7 +11563,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 67))
+      (apertureRef (dCode 70))
       (itemMnemonic 
         "PAD SQ 74.8mil 133.9mil 0.0mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.90mm 3.40mm 0.00mm 270.0deg (0.00mm,0.00mm)"
@@ -11505,7 +11571,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 67))
+      (apertureRef (dCode 70))
       (itemMnemonic 
         "PAD SQ 74.8mil 133.9mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.90mm 3.40mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11513,7 +11579,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 68))
+      (apertureRef (dCode 71))
       (itemMnemonic 
         "PAD SQ 75.0mil 75.0mil 38.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.91mm 1.91mm 0.97mm 180.0deg (0.00mm,0.00mm)"
@@ -11521,7 +11587,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 69))
+      (apertureRef (dCode 72))
       (itemMnemonic 
         "PAD SQ 78.0mil 85.9mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 1.98mm 2.18mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11529,7 +11595,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 70))
+      (apertureRef (dCode 73))
       (itemMnemonic 
         "PAD SQ 89.8mil 148.9mil 0.0mil 0.0deg (0.0mil,0.0mil)"
         "PAD SQ 2.28mm 3.78mm 0.00mm 0.0deg (0.00mm,0.00mm)"
@@ -11537,7 +11603,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 70))
+      (apertureRef (dCode 73))
       (itemMnemonic 
         "PAD SQ 89.8mil 148.9mil 0.0mil 180.0deg (0.0mil,0.0mil)"
         "PAD SQ 2.28mm 3.78mm 0.00mm 180.0deg (0.00mm,0.00mm)"
@@ -11545,7 +11611,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 71))
+      (apertureRef (dCode 74))
       (itemMnemonic 
         "PAD SQ 89.8mil 148.9mil 0.0mil 270.0deg (0.0mil,0.0mil)"
         "PAD SQ 2.28mm 3.78mm 0.00mm 270.0deg (0.00mm,0.00mm)"
@@ -11553,7 +11619,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 71))
+      (apertureRef (dCode 74))
       (itemMnemonic 
         "PAD SQ 89.8mil 148.9mil 0.0mil 90.0deg (0.0mil,0.0mil)"
         "PAD SQ 2.28mm 3.78mm 0.00mm 90.0deg (0.00mm,0.00mm)"
@@ -11561,7 +11627,23 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 72))
+      (apertureRef (dCode 75))
+      (itemMnemonic 
+        "PAD SQ 98.4mil 98.4mil 0.0mil 0.0deg (0.0mil,0.0mil)"
+        "PAD SQ 2.50mm 2.50mm 0.00mm 0.0deg (0.00mm,0.00mm)"
+        "PAD SQ 250000app 250000app 0app 0.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 75))
+      (itemMnemonic 
+        "PAD SQ 98.4mil 98.4mil 0.0mil 180.0deg (0.0mil,0.0mil)"
+        "PAD SQ 2.50mm 2.50mm 0.00mm 180.0deg (0.00mm,0.00mm)"
+        "PAD SQ 250000app 250000app 0app 180.0deg (0app,0app)"
+      )
+    )
+    (apertureAssn 
+      (apertureRef (dCode 76))
       (itemMnemonic 
         "VIA EL 34.0mil 34.0mil 12.5mil 0.0deg (0.0mil,0.0mil)"
         "VIA EL 0.86mm 0.86mm 0.32mm 0.0deg (0.00mm,0.00mm)"
@@ -11569,7 +11651,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 73))
+      (apertureRef (dCode 77))
       (itemMnemonic 
         "VIA EL 40.0mil 40.0mil 12.5mil 0.0deg (0.0mil,0.0mil)"
         "VIA EL 1.02mm 1.02mm 0.32mm 0.0deg (0.00mm,0.00mm)"
@@ -11577,7 +11659,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 73))
+      (apertureRef (dCode 77))
       (itemMnemonic 
         "VIA EL 40.0mil 40.0mil 12.5mil 270.0deg (0.0mil,0.0mil)"
         "VIA EL 1.02mm 1.02mm 0.32mm 270.0deg (0.00mm,0.00mm)"
@@ -11585,7 +11667,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 74))
+      (apertureRef (dCode 78))
       (itemMnemonic 
         "VIA EL 49.0mil 49.0mil 12.5mil 0.0deg (0.0mil,0.0mil)"
         "VIA EL 1.24mm 1.24mm 0.32mm 0.0deg (0.00mm,0.00mm)"
@@ -11593,7 +11675,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 75))
+      (apertureRef (dCode 79))
       (itemMnemonic 
         "VIA EL 55.0mil 55.0mil 12.5mil 0.0deg (0.0mil,0.0mil)"
         "VIA EL 1.40mm 1.40mm 0.32mm 0.0deg (0.00mm,0.00mm)"
@@ -11601,7 +11683,7 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       )
     )
     (apertureAssn 
-      (apertureRef (dCode 75))
+      (apertureRef (dCode 79))
       (itemMnemonic 
         "VIA EL 55.0mil 55.0mil 12.5mil 270.0deg (0.0mil,0.0mil)"
         "VIA EL 1.40mm 1.40mm 0.32mm 270.0deg (0.00mm,0.00mm)"
@@ -11642,6 +11724,13 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (drillSymSize 80.0)
       (outputPads True)
     )
+    (camQueueEntry "BDR"
+      (layerList 
+        (layerNumRef 3)
+      )
+      (isSelected True)
+      (drillSymSize 80.0)
+    )
     (camQueueEntry "TSL"
       (layerList 
         (layerNumRef 6)
@@ -11658,41 +11747,28 @@ ACCEL_ASCII "C:\Users\pashaz\Documents\My Documents\MSX\CSFG017.pcb"
       (drillSymSize 80.0)
       (outputRefDes True)
     )
-    (camQueueEntry "BRD"
-      (layerList 
-        (layerNumRef 3)
-      )
-      (isSelected True)
-      (drillSymSize 80.0)
-      (outputPads True)
-      (outputVias True)
-    )
   )
   (ncDrillSettings 
     (units in)
     (ncDrillFormat 2 4)
      (codeFormat AsciiNone)
     (zeroFormat None)
-    (outputPath "C:\\USERS\\PASHAZ\\DOCUMENTS\\MY DOCUMENTS\\MSX")
-    (viewLog True)
+    (outputPath "GERBER")
+    (viewLog False)
     (autoClear True)
     (toolDef (toolCode 1) (toolDiam 12.5) )
-    (toolDef (toolCode 2) (toolDiam 30.0) )
-    (toolDef (toolCode 3) (toolDiam 30.0) )
-    (toolDef (toolCode 4) (toolDiam 0.9 mm) )
-    (toolDef (toolCode 5) (toolDiam 38.0) )
-    (toolDef (toolCode 6) (toolDiam 1.2 mm) )
-    (toolDef (toolCode 7) (toolDiam 1.5 mm) )
-    (toolDef (toolCode 8) (toolDiam 70.0) )
-    (toolDef (toolCode 9) (toolDiam 2.2 mm) )
-    (toolDef (toolCode 10) (toolDiam 4.66522 mm) )
+    (toolDef (toolCode 2) (toolDiam 0.9 mm) )
+    (toolDef (toolCode 3) (toolDiam 38.0) )
+    (toolDef (toolCode 4) (toolDiam 1.2 mm) )
+    (toolDef (toolCode 5) (toolDiam 1.5 mm) )
+    (toolDef (toolCode 6) (toolDiam 4.66522 mm) )
     (toolAssn (holeDiam 12.5) (toolRef (toolCode 1)))
-    (toolAssn (holeDiam 0.9 mm) (toolRef (toolCode 4)))
-    (toolAssn (holeDiam 38.0) (toolRef (toolCode 5)))
-    (toolAssn (holeDiam 1.2 mm) (toolRef (toolCode 6)))
-    (toolAssn (holeDiam 1.5 mm) (toolRef (toolCode 7)))
-    (toolAssn (holeDiam 4.66522 mm) (isHolePlated False) (toolRef (toolCode 10)))
-    (camQueueEntry "DRL"
+    (toolAssn (holeDiam 0.9 mm) (toolRef (toolCode 2)))
+    (toolAssn (holeDiam 38.0) (toolRef (toolCode 3)))
+    (toolAssn (holeDiam 1.2 mm) (toolRef (toolCode 4)))
+    (toolAssn (holeDiam 1.5 mm) (toolRef (toolCode 5)))
+    (toolAssn (holeDiam 4.66522 mm) (isHolePlated False) (toolRef (toolCode 6)))
+    (camQueueEntry "NCD"
       (layerList 
         (layerNumRef 1)
         (layerNumRef 2)
