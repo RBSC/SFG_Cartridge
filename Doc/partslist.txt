@@ -124,12 +124,12 @@ Count  ComponentName   RefDes          PatternName     Value           Notes
      2 R_0603          R16             R0603_101A      560             
                        R20                                                                            
      1 SN74ALS04BD     IC108           D014                            SMD chip. See readme for 74HCT04 option
-     1 SOT-23(A1A2K)   TR103           SOT-23(A1A2K)   2SA733          
-     5 SOT-23(A1A2K)   TR101           SOT-23(A1A2K)   2SC945          
-                       TR102                                                                          
-                       TR104                                                                          
-                       TR105                                                                          
-                       TR106                                                                          
+     1 SOT-23(A1A2K)   T3              SOT-23(A1A2K)   2SA733          
+     5 SOT-23(A1A2K)   T1              SOT-23(A1A2K)   2SC945          
+                       T2                                                                          
+                       T4                                                                          
+                       T5                                                                          
+                       T6                                                                          
      1 ST-222          AX1             ST-222                          Audio socket
      2 TANTAL-C        C10             C-TANTAL-C      100uF 16v
                        C11                                                                            
