@@ -1,5 +1,5 @@
 SFG 05/01-S OPM Cartridge Version 1.2
-Copyright (C) 2017 RBSC
+Copyright (C) 2017-2020 RBSC
 Original SFG design by Yamaha Corp.
 
 
