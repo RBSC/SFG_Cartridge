@@ -1,5 +1,5 @@
 Yamaha SFG 05/01-S Cartridge Board v1.2
-Copyright (c) 2017-2020 RBSC
+Copyright (c) 2017 RBSC
 
 The Setup
 ---------
@@ -71,26 +71,12 @@ When the sources of the tools are used to create alternative projects, please al
 Contact information
 -------------------
 
-The members of RBSC group Tnt23, Wierzbowsky, Pencioner, Ptero, GreyWolf, SuperMax and DJS3000 can be contacted via the group's e-mail
-address:
+The members of RBSC group Wierzbowsky, Ptero and DJS3000 can be contacted via the MSX.ORG or ZX-PK.RU forums. Just send a personal
+message and state your business.
 
-info@rbsc.su
-
-The group's coordinator could be reached via this e-mail address:
-
-admin@rbsc.su
-
-The group's website can be found here:
-
-https://rbsc.su/
-https://rbsc.su/ru
-
-The RBSC's hardware repository can be found here:
+The RBSC repository can be found here:
 
 https://github.com/rbsc
 
-The RBSC's 3D model repository can be found here:
-
-https://www.thingiverse.com/groups/rbsc/things
 
 -= ! MSX FOREVER ! =-
